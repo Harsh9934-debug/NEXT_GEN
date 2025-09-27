@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState, useMemo } from 'react'
 import Page3ofAgence from './Page3ofAgence'
 
 const Agence = () => {
@@ -14,7 +14,9 @@ const Agence = () => {
 
   const [isDesktop, setIsDesktop] = useState(false)
 
-  const imageArray = [
+  const imageArray = useMemo(() => [
+    'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
+    'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg',
@@ -30,7 +32,7 @@ const Agence = () => {
     'https://k72.ca/uploads/teamMembers/MAXIME_480X640_2-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/MEGGIE_480X640_2-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/joel_480X640_3-480x640.jpg',
-  ]
+  ], [])
 
   useEffect(() => {
     const checkScreen = () => setIsDesktop(window.innerWidth >= 1024)
@@ -40,6 +42,9 @@ const Agence = () => {
   }, [])
 
   useGSAP(() => {
+    // Clear any existing scroll triggers first
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    
     // GSAP for Page 1's scrolling image
     if (isDesktop && imageDivRef.current && imageRef.current) {
       gsap.to(imageDivRef.current, {
@@ -55,32 +60,28 @@ const Agence = () => {
           anticipatePin: 1,
           invalidateOnRefresh: true,
           onUpdate: (elem) => {
-            if (imageRef.current) {
-              let imageIndex
-              if (elem.progress < 1) {
-                imageIndex = Math.floor(elem.progress * imageArray.length)
-              } else {
-                imageIndex = imageArray.length - 1
+            if (imageRef.current && imageArray.length > 0) {
+              let imageIndex = Math.min(
+                Math.floor(elem.progress * imageArray.length), 
+                imageArray.length - 1
+              )
+              imageIndex = Math.max(0, imageIndex) // Ensure index is not negative
+              
+              if (imageArray[imageIndex]) {
+                imageRef.current.src = imageArray[imageIndex]
               }
-              imageRef.current.src = imageArray[imageIndex]
             }
           }
         }
       })
     }
 
-    // GSAP for Page 3's moving name text
-    if (nameTextRef.current) {
-      gsap.to(nameTextRef.current, {
-        x: '200%', // Adjust this value to control how far it moves
-        duration: 4, // Duration of one cycle
-        repeat: -1, // Infinite loop
-        yoyo: true, // Go back and forth
-        ease: 'none', // Linear movement
-      });
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }
 
-  }, [isDesktop, imageArray]); // Add imageArray to dependencies for useGSAP related to imageRef
+  }, [isDesktop]); // Remove imageArray from dependencies since it's now memoized
 
 
   return (
@@ -152,7 +153,8 @@ const Agence = () => {
         </div>
     </div>
 </div>
-  <Page3ofAgence />
+
+<Page3ofAgence />
     </div>
   )
 }
