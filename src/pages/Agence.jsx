@@ -15,6 +15,7 @@ const Agence = () => {
 
   const imageArray = [
     'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
+    'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg',
     'https://k72.ca/uploads/teamMembers/HugoJoseph_480x640-480x640.jpg',
@@ -39,7 +40,7 @@ const Agence = () => {
 
   useGSAP(() => {
     // GSAP for Page 1's scrolling image
-    if (isDesktop && imageDivRef.current) {
+    if (isDesktop && imageDivRef.current && imageRef.current) {
       gsap.to(imageDivRef.current, {
         scrollTrigger: {
           trigger: imageDivRef.current,
@@ -53,13 +54,15 @@ const Agence = () => {
           anticipatePin: 1,
           invalidateOnRefresh: true,
           onUpdate: (elem) => {
-            let imageIndex
-            if (elem.progress < 1) {
-              imageIndex = Math.floor(elem.progress * imageArray.length)
-            } else {
-              imageIndex = imageArray.length - 1
+            if (imageRef.current) {
+              let imageIndex
+              if (elem.progress < 1) {
+                imageIndex = Math.floor(elem.progress * imageArray.length)
+              } else {
+                imageIndex = imageArray.length - 1
+              }
+              imageRef.current.src = imageArray[imageIndex]
             }
-            imageRef.current.src = imageArray[imageIndex]
           }
         }
       })
@@ -68,8 +71,8 @@ const Agence = () => {
     // GSAP for Page 3's moving name text
     if (nameTextRef.current) {
       gsap.to(nameTextRef.current, {
-        x: '20%', // Adjust this value to control how far it moves
-        duration: 8, // Duration of one cycle
+        x: '200%', // Adjust this value to control how far it moves
+        duration: 4, // Duration of one cycle
         repeat: -1, // Infinite loop
         yoyo: true, // Go back and forth
         ease: 'none', // Linear movement
@@ -103,7 +106,7 @@ const Agence = () => {
             </h1>
           </div>
           <div className='lg:pl-[40%] lg:mt-20 mt-6 p-5'>
-            <p className='lg:text-6xl text-xl leading-tight'>
+            <p className='lg:text-5xl text-xl leading-tight'>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               We stay curious and open-minded, letting innovation lead over ego. To us, every brand is alive—with values, personality, and a story. Short-term wins fade, but meaningful impact lasts. We code, design, and create with that perspective in every project we deliver.
             </p>
