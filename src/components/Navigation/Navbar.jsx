@@ -20,7 +20,8 @@ const Navbar = () => {
                                        group-hover:scale-110 group-hover:tracking-[0.25em]
                                        relative z-10`}>
                             <span className='inline-block transform transition-transform duration-300 
-                                           group-hover:-rotate-2 group-hover:translate-y-[-2px]'>
+                                           group-hover:-rotate-2 group-hover:translate-y-[-2px]
+                                           text-white'>
                                 NEXT
                             </span>
                             <span className='text-[#D3FD50] relative inline-block ml-1 
