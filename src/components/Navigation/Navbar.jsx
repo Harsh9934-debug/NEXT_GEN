@@ -12,19 +12,19 @@ const Navbar = () => {
     return (
         <div className='z-4 flex fixed top-0 w-full  items-start justify-between'>
             <div className='lg:p-8 p-2 '>
-            <div className='lg:w-52 w-10 group cursor-pointer'>
+            <div className='lg:w-52 w-28 min-w-[7rem] group cursor-pointer'>
                     {/* NEXTGEN Text Logo */}
                     <div className='relative '>
-                        <h1 className={`font-black lg:text-2xl text-xl tracking-[0.2em] transition-all duration-500
-                                       ${navColor === 'white' ? 'text-white' : 'text-black'} 
+                        <h1 className={`font-black text-xl lg:text-2xl tracking-[0.2em] transition-all duration-500
+                                       ${navColor === 'white' ? 'text-white' : 'text-black'}
                                        group-hover:scale-110 group-hover:tracking-[0.25em]
-                                       relative z-10`}>
-                            <span className='inline-block transform transition-transform duration-300 
+                                       whitespace-nowrap relative z-10`}>
+                            <span className='inline-block transform transition-transform duration-300
                                            group-hover:-rotate-2 group-hover:translate-y-[-2px]
                                            text-white'>
                                 NEXT
                             </span>
-                            <span className='text-[#D3FD50] relative inline-block ml-1 
+                            <span className='text-[#D3FD50] relative inline-block ml-1
                                            transform transition-all duration-300
                                            group-hover:rotate-2 group-hover:translate-y-[2px]
                                            drop-shadow-[0_0_8px_rgba(211,253,80,0.3)]'>
