@@ -4,6 +4,7 @@ import Agence from './pages/Agence'
 import Projects from './pages/Projects'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
+import ScrollToTop from './components/common/ScrollToTop'
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
     <div className='overflow-x-hidden'>
       <Navbar />
       <FullScreenNav />
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/agence' element={<Agence />} />
