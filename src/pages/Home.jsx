@@ -22,16 +22,11 @@ const Home = () => {
     if (stickyMask.current && container.current) {
       const progress = getScrollProgress();
       
-      // Instead of changing mask size, zoom the video
-      const scale = 1 + (progress * 4); // Scale from 1x to 5x
-      const maskSize = initialMaskSize * 100; // Keep mask size constant
-      
-      // Apply zoom to video container
-      stickyMask.current.style.transform = `scale(${scale})`;
-      
-      // Keep mask size constant
-      stickyMask.current.style.webkitMaskSize = maskSize + "%";
-      stickyMask.current.style.maskSize = maskSize + "%";
+      // Animate the mask size from initialMaskSize to targetMaskSize
+      // This is the core logic for the reveal animation
+      const newMaskSize = (initialMaskSize + targetMaskSize * progress) * 100; // in percent
+      stickyMask.current.style.webkitMaskSize = newMaskSize + "%";
+      stickyMask.current.style.maskSize = newMaskSize + "%";
     }
     requestAnimationFrame(animate)
   }
@@ -52,34 +47,44 @@ const Home = () => {
   return (
     <div>
       {/* Scroll Mask Effect Section - FIRST */}
-      <div ref={container} className="relative h-[150vh] bg-black overflow-hidden">
+  <div ref={container} className="relative h-[190vh] bg-black overflow-hidden">
         <div 
           ref={stickyMask} 
-          className="flex sticky top-0 h-screen w-full items-center justify-center"
+          className="sticky top-0 h-screen w-full"
           style={{
             maskImage: 'url(/text-mask.svg)',
             WebkitMaskImage: 'url(/text-mask.svg)',
-            maskPosition: '50% center',
-            WebkitMaskPosition: '50% center',
+            maskPosition: '52.35% center',
+            WebkitMaskPosition: '52.35% center',
             maskRepeat: 'no-repeat',
             WebkitMaskRepeat: 'no-repeat',
-            maskSize: '80%',
-            WebkitMaskSize: '80%',
-            transformOrigin: 'center center'
+            maskSize: `${initialMaskSize * 100}%`,
+            WebkitMaskSize: `${initialMaskSize * 100}%`
           }}
         >
-          <Video />
+          {/* The content that gets masked */}
+          <div className='relative w-screen h-screen text-white overflow-hidden'>
+            <div className='absolute inset-0'>
+              <Video />
+            </div>
+            <div className='relative h-full w-full pb-5 flex flex-col justify-between'>
+              <HomeHeroText />
+              <HomeBottomText />
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Original Landing Page - SECOND */}
       <div className='text-white'>
-        <div className='h-screen w-screen fixed'>
-          <Video />
-        </div>
-        <div className='h-screen w-screen relative pb-5 overflow-hidden flex flex-col justify-between'>
-          <HomeHeroText />
-          <HomeBottomText />
+        <div className='h-screen w-screen relative overflow-hidden'>
+          <div className='absolute inset-0'>
+            <Video />
+          </div>
+          <div className='relative h-full w-full pb-5 flex flex-col justify-between'>
+            <HomeHeroText />
+            <HomeBottomText />
+          </div>
         </div>
       </div>
     </div>
