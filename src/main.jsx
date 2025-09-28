@@ -11,6 +11,15 @@ if (import.meta.env.PROD) {
   inject();
 }
 
+if (typeof window !== 'undefined') {
+  const { pathname, search, hash } = window.location;
+  const hasHashRoute = hash && hash.startsWith('#/');
+
+  if (pathname !== '/' && !hasHashRoute) {
+    window.location.replace(`${window.location.origin}/#${pathname}${search}`);
+  }
+}
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
