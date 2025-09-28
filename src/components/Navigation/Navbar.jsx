@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className='lg:w-52 w-10 group cursor-pointer'>
                     {/* NEXTGEN Text Logo */}
                     <div className='relative '>
-                        <h1 className={`font-black lg:text-3xl text-xl tracking-[0.2em] transition-all duration-500
+                        <h1 className={`font-black lg:text-2xl text-xl tracking-[0.2em] transition-all duration-500
                                        ${navColor === 'white' ? 'text-white' : 'text-black'} 
                                        group-hover:scale-110 group-hover:tracking-[0.25em]
                                        relative z-10`}>
