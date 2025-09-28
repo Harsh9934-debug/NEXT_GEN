@@ -1,13 +1,17 @@
 // this contain the logo for the website and the hamburger menu for the navigation bar
 
 import React, { useContext, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
 import { NavbarColorContext, NavbarContext } from '../../context/NavContext'
 
 const Navbar = () => {
 
+    const location = useLocation()
     const navGreenRef = useRef(null)
     const [navOpen,setNavOpen] = useContext(NavbarContext)
     const [navColor, setNavColor] = useContext(NavbarColorContext)
+
+    const isAgence = location.pathname === '/agence'
 
     return (
         <div className='z-4 flex fixed top-0 w-full  items-start justify-between'>
@@ -19,9 +23,9 @@ const Navbar = () => {
                                        ${navColor === 'white' ? 'text-white' : 'text-black'}
                                        group-hover:scale-110 group-hover:tracking-[0.25em]
                                        whitespace-nowrap relative z-10`}>
-                            <span className='inline-block transform transition-transform duration-300
+                            <span className={`inline-block transform transition-transform duration-300
                                            group-hover:-rotate-2 group-hover:translate-y-[-2px]
-                                           text-white'>
+                                           ${isAgence ? 'text-black' : 'text-white'}`}>
                                 NEXT
                             </span>
                             <span className='text-[#D3FD50] relative inline-block ml-1
