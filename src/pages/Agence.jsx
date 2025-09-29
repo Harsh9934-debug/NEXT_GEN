@@ -43,16 +43,10 @@ const Agence = () => {
     'Content Creation',
   ], []);
 
-  const studioPillars = useMemo(() => [
-    { title: 'Our Work', summary: 'Born in curiosity and fueled by craft, we ship experiences that feel inevitable the moment they launch.', accent: 'Work' },
-    { title: 'Our Creative', summary: 'Talent thrives in our hybrid studio model—strategy, design, and engineering sprinting together without bottlenecks.', accent: 'Creative' },
-    { title: 'Our Culture', summary: 'We stay relentlessly open. Every voice shapes the room and the room shapes the work.', accent: 'Culture' }
-  ], []);
-
   const collaborationHighlights = useMemo(() => [
-    { label: 'Weekly rituals', value: 'Co-create reviews · live prototypes' },
-    { label: 'Launch cadence', value: 'Every 6-8 weeks' },
-    { label: 'Team DNA', value: 'Strategists · Makers · Builders' }
+    { label: 'Our Work', value: 'Born in curiosity and fueled by craft, we ship experiences that feel inevitable the moment they launch.' },
+    { label: 'Our Creative', value: 'Talent thrives in our hybrid studio model—strategy, design, and engineering sprinting together without bottlenecks.' },
+    { label: 'Our Culture', value: 'We stay relentlessly open. Every voice shapes the room and the room shapes the work.' }
   ], []);
 
   // --- Effects for screen size detection ---
@@ -142,18 +136,16 @@ const Agence = () => {
 
         <div className='relative mx-auto max-w-6xl'>
           <div className='flex flex-col gap-2 uppercase tracking-[0.35em] text-[11px] text-black/45 sm:flex-row sm:items-center sm:justify-between'>
-            <span>Agence NEXTGEN</span>
-            <span>Montréal · Global collaborators</span>
+            <span>Agency NEXTGEN</span>
+            <span>India · Bengaluru </span>
           </div>
 
           <div className='mt-12 grid gap-16 lg:grid-cols-[minmax(0,1fr)_280px]'>
             <div className='flex flex-col gap-8 max-w-3xl'>
-              <h1 className='text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-[-0.02em]'>
-                We architect living brands and digital products that feel human, swift, and unmistakably yours.
-              </h1>
+              <h3 className='text-4xl md:text-6xl lg:text-6xl font-bold leading-tight tracking-[-0.02em]'>
+              We don't just build digital assets, we create unforgettable human experiences. </h3>
               <p className='text-lg leading-relaxed text-black/70'>
-                From pre-launch disruptors to beloved household names, our studio builds momentum by aligning strategy, storytelling, design, and engineering in the same room. We move fast without dropping fidelity.
-              </p>
+                Welcome to NEXTGEN, where we build living brands and digital products that are not only human, swift, and unmistakably yours but also thrive in today's digital landscape. We're a full-service creative agency dedicated to crafting digital experiences that connect with people and deliver results.  </p>
               <div className='flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em] text-black/55'>
                 {servicePillars.map(pillar => (
                   <span key={pillar} className='rounded-full border border-black/10 bg-white/80 px-4 py-2 shadow-sm backdrop-blur transition-colors duration-300 hover:bg-black hover:text-white'>
@@ -176,57 +168,13 @@ const Agence = () => {
                 </a>
               </div>
             </div>
-
-            {/* <div className='grid grid-cols-2 gap-6'>
-              {heroStats.map(stat => (
-                <article
-                  key={stat.label}
-                  className='rounded-[22px] border border-black/10 bg-white/90 p-5 shadow-lg backdrop-blur transition-transform duration-300 hover:-translate-y-2'
-                >
-                  <p className='text-[11px] uppercase tracking-[0.35em] text-black/40'>{stat.label}</p>
-                  <p className='mt-4 text-3xl font-bold tracking-tight text-black'>{stat.value}</p>
-                  <p className='mt-2 text-sm leading-relaxed text-black/60'>{stat.detail}</p>
-                </article>
-              ))}
-            </div> */}
           </div>
         </div>
       </section>
 
-      {/* STUDIO PILLARS SECTION */}
-      <section id='page2' className='relative overflow-hidden bg-white px-5 sm:px-8 lg:px-20 py-20'>
-        <div className='absolute inset-0 -z-10 bg-gradient-to-br from-[#f7f6f1] via-white to-[#f0efe9]' />
-        <div className='mx-auto flex max-w-6xl flex-col gap-12 text-center'>
-          <div className='space-y-4'>
-            <span className='text-[11px] uppercase tracking-[0.35em] text-black/40'>Studio pillars</span>
-            <h2 className='text-3xl md:text-5xl font-bold leading-tight text-black'>
-              A collective of curious minds, building what’s next.
-            </h2>
-            <p className='mx-auto max-w-3xl text-lg leading-relaxed text-black/65'>
-              Every engagement pairs sharp strategy with craft obsessed execution. Our partners stay because we turn bold ideas into measurable momentum.
-            </p>
-          </div>
-
-          <div className='grid gap-6 lg:grid-cols-3'>
-            {studioPillars.map(pillar => (
-              <article
-                key={pillar.title}
-                className='group flex h-full flex-col gap-6 rounded-[28px] border border-black/10 bg-white/80 p-8 text-left shadow-lg transition-transform duration-300 hover:-translate-y-3 hover:shadow-2xl backdrop-blur'
-              >
-                <div className='text-[11px] uppercase tracking-[0.35em] text-black/35'>{pillar.accent}</div>
-                <h3 className='text-2xl md:text-3xl font-bold tracking-tight text-black'>{pillar.title}</h3>
-                <p className='text-base leading-relaxed text-black/65'>
-                  {pillar.summary}
-                </p>
-                <div className='mt-auto h-[1px] w-full bg-gradient-to-r from-black/15 via-black/5 to-transparent group-hover:from-black/35 group-hover:via-black/15' />
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* COLLABORATION MODEL SECTION */}
-      <section className='relative px-5 sm:px-8 lg:px-20 py-20'>
+      <section className='relative px-5 sm:px-8 mb-40 lg:px-20 py-20'>
         <div className='mx-auto flex max-w-5xl flex-col items-center gap-10 rounded-[36px] border border-black/10 bg-[#0f0f0f] px-6 py-16 text-white shadow-2xl sm:px-12'>
           <div className='text-center'>
             <span className='text-[11px] uppercase tracking-[0.45em] text-white/50'>Collaboration model</span>
