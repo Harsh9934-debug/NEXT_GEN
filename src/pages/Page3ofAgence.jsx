@@ -1,14 +1,13 @@
 import React, { useRef } from 'react';
 import { useScroll, useTransform, motion } from "framer-motion";
 import kundanImage from '/kundan.png';
-import mayureshImage from '/mayuresh.png';
+import mayuresh2Image from '/mayuresh2.png';
 import ArunImage from '/arun.png';
 import harshImage from '/harsh.png';
 import mayankimage from '/mayank.png';
 import kundan2Image from '/kundan2.png';
 
-
-// --- Card Component with Parallax ---
+// --- Card Component with Enhanced Parallax & Staggered Animations ---
 const TeamCard = ({
   person,
   image,
@@ -23,21 +22,29 @@ const TeamCard = ({
     offset: ["start end", "end start"]
   });
 
-  // Parallax and fade-in/out animations
-  const y = useTransform(scrollYProgress, [0, 1], [-170, 150]);
+  // Main container opacity and scale
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
+
+  // Parallax for the card's content
+  const contentY = useTransform(scrollYProgress, [0, 1], [-50, 50]);
 
   return (
     <div ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
       <motion.div
-        style={{ y, opacity, scale }}
+        style={{ opacity, scale }}
         className="w-full h-full flex items-center justify-center p-4 bg-gradient-to-br from-[#050505] via-[#090909] to-[#0f0f0f] text-white"
       >
-        <div className={`relative z-10 w-full max-w-6xl flex flex-col gap-8 lg:gap-16 items-center justify-center p-6 md:p-12 border-2 border-white/5 rounded-3xl backdrop-blur-md ${layoutDirection === 'row-reverse' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+        <motion.div
+          style={{ y: contentY }}
+          className={`relative z-10 w-full max-w-6xl flex flex-col gap-8 lg:gap-16 items-center justify-center p-6 md:p-12  rounded-3xl backdrop-blur-md ${layoutDirection === 'row-reverse' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
+        >
           {/* Image Section */}
           <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-end">
-            <div className="relative aspect-[3/4] w-full max-w-sm rounded-2xl overflow-hidden">
+            <motion.div
+              style={{ y: useTransform(scrollYProgress, [0, 1], [20, -20]) }}
+              className="relative aspect-[3/4] w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl"
+            >
               <img
                 src={image}
                 alt={`Portrait of ${person}`}
@@ -45,20 +52,22 @@ const TeamCard = ({
               />
               {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" /> */}
               <div className="absolute bottom-6 left-6">
-                <span className="inline-block rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
+                <span className="inline-block rounded-full  px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
                   {badge}
                 </span>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Text Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left space-y-4 md:space-y-6">
-            <p className="text-sm uppercase tracking-[0.2em] text-white/50 font-medium">{tags}</p>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">{person}</h2>
-            <p className="text-lg leading-relaxed text-white/80 max-w-xl mx-auto lg:mx-0">{description}</p>
+            <motion.div style={{ y: useTransform(scrollYProgress, [0, 1], [-20, 20]) }}>
+              <p className="text-sm uppercase tracking-[0.2em] text-white/50 font-medium">{tags}</p>
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">{person}</h2>
+              <p className="text-lg leading-relaxed text-white/80 max-w-xl mx-auto lg:mx-0">{description}</p>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );
@@ -102,7 +111,7 @@ export default function Page3ofAgence() {
       />
       <TeamCard
         person="Mayuresh"
-        image={mayureshImage}
+        image={mayuresh2Image}
         badge="Digital Creator"
         tags="STRATEGY · PERFORMANCE · STORY"
         description="Mayuresh crafts immersive product journeys that balance narrative, usability, and aesthetic precision. His systems thinking keeps every interface adaptable and future-ready."
