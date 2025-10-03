@@ -6,6 +6,8 @@ import ArunImage from '/arun.png';
 import harshImage from '/harsh.png';
 import mayankimage from '/mayank.png';
 import kundan2Image from '/kundan2.png';
+
+
 // --- Card Component with Parallax ---
 const TeamCard = ({
   person,
