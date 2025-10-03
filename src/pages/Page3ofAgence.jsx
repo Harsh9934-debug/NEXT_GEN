@@ -3,256 +3,109 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import kundanImage from '/kundan.png';
 import mayureshImage from '/mayuresh.png';
 import ArunImage from '/arun.png';
-
-function Page3ofAgence() {
-  const container = useRef();
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"]
-  });
-
-  return (
-    <div ref={container} className="relative h-[200vh]">
-      <Section1 scrollYProgress={scrollYProgress} />
-      <Section2 scrollYProgress={scrollYProgress} />
-    </div>
-  );
-}
-
-// Enhanced Variants
-const sectionVariants = {
-  hidden: { opacity: 0, y: 48 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.9,
-      ease: [0.16, 1, 0.3, 1],
-      when: 'beforeChildren',
-      staggerChildren: 0.18,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, scale: 0.96, y: 40 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      duration: 1.1,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  },
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, scale: 1.05 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 1.3,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.2, 0.8, 0.2, 1],
-    },
-  },
-};
-
-const badgeVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: 'easeOut',
-      delay: 0.2,
-    },
-  },
-};
-
-// Enhanced Card Component
-const TeamCard = ({ 
-  person, 
-  image, 
-  badge, 
-  tags, 
-  description, 
-  scrollYProgress, 
-  scaleRange, 
-  rotateRange,
+import harshImage from '/harsh.png';
+import mayankimage from '/mayank.png';
+import kundan2Image from '/kundan2.png';
+// --- Card Component with Parallax ---
+const TeamCard = ({
+  person,
+  image,
+  badge,
+  tags,
+  description,
   layoutDirection = 'row'
 }) => {
-  const scale = useTransform(scrollYProgress, [0, 1], scaleRange);
-  const rotate = useTransform(scrollYProgress, [0, 1], rotateRange);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  // Parallax and fade-in/out animations
+  const y = useTransform(scrollYProgress, [0, 1], [-170, 150]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
 
   return (
-    <motion.section
-      style={{ scale, rotate }}
-      className="sticky top-0 flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#050505] via-[#090909] to-[#0f0f0f] px-4 py-12 text-white sm:px-6 lg:px-8"
-    >
-      {/* Enhanced Background Effects */}
-      <div className="pointer-events-none absolute inset-0 -z-10 opacity-70" aria-hidden="true">
-        <motion.div
-          className="absolute -top-40 left-10 h-[22rem] w-[22rem] rounded-full bg-[#9fe80c]/25 blur-[160px]"
-          animate={{ 
-            opacity: [0.3, 0.7, 0.3],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <motion.div
-          className="absolute bottom-[-140px] right-[-120px] h-[26rem] w-[26rem] rounded-full bg-white/15 blur-[180px]"
-          animate={{ 
-            opacity: [0.2, 0.5, 0.2],
-            scale: [1, 1.05, 1]
-          }}
-          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-        />
-      </div>
-
-      {/* Main Content Container */}
+    <div ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
       <motion.div
-        className="relative z-20 w-full max-w-6xl"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }}
+        style={{ y, opacity, scale }}
+        className="w-full h-full flex items-center justify-center p-4 bg-gradient-to-br from-[#050505] via-[#090909] to-[#0f0f0f] text-white"
       >
-        <div className={`flex flex-col gap-12 lg:gap-16 ${layoutDirection === 'row-reverse' ? 'lg:flex-row-reverse' : 'lg:flex-row'} lg:items-center lg:justify-between`}>
-          
-          {/* Enhanced Image Card */}
-          <motion.div 
-            className="relative lg:flex-1"
-            variants={cardVariants}
-          >
-            <motion.div
-              className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-3xl lg:rounded-[2.5rem] shadow-2xl"
-              variants={imageVariants}
-              whileHover={{
-                scale: 1.02,
-                rotate: layoutDirection === 'row-reverse' ? 1 : -1,
-                transition: { type: 'spring', stiffness: 200, damping: 15 },
-              }}
-            >
-              {/* Image with Gradient Overlay */}
+        <div className={`relative z-10 w-full max-w-6xl flex flex-col gap-8 lg:gap-16 items-center justify-center p-6 md:p-12 border-2 border-white/5 rounded-3xl backdrop-blur-md ${layoutDirection === 'row-reverse' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+          {/* Image Section */}
+          <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="relative aspect-[3/4] w-full max-w-sm rounded-2xl overflow-hidden">
               <img
                 src={image}
                 alt={`Portrait of ${person}`}
                 className="h-full w-full object-cover"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" aria-hidden="true" />
-              
-              {/* Enhanced Badge */}
-              <motion.div
-                className="absolute bottom-6 left-6 right-6"
-                variants={badgeVariants}
-              >
-                <div className="flex flex-wrap gap-2">
-                  <motion.span
-                    className="inline-flex rounded-2xl border border-white/30 bg-black/70 px-5 py-3 text-sm font-semibold uppercase tracking-wider text-white/90 backdrop-blur-xl"
-                    animate={{ y: [0, -4, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  >
-                    {badge}
-                  </motion.span>
-                </div>
-                </motion.div>
-            </motion.div>
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" /> */}
+              <div className="absolute bottom-6 left-6">
+                <span className="inline-block rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
+                  {badge}
+                </span>
+              </div>
+            </div>
+          </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-[#9fe80c]/20 blur-3xl" />
-            <div className="absolute -top-4 -left-4 h-16 w-16 rounded-full bg-white/10 blur-2xl" />
-          </motion.div>
-
-          {/* Enhanced Text Content */}
-          <motion.div 
-            className="lg:flex-1 space-y-8 text-center lg:text-left"
-            variants={textVariants}
-          >
-            {/* Tags */}
-            <motion.div variants={textVariants}>
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60 font-medium">
-                {tags}
-              </p>
-            </motion.div>
-
-            {/* Name */}
-            <motion.div variants={textVariants}>
-              <h2 className="text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
-                {person}
-              </h2>
-            </motion.div>
-
-            {/* Description */}
-            <motion.div variants={textVariants}>
-              <p className="text-lg leading-relaxed text-white/80 sm:text-xl lg:text-lg xl:text-xl max-w-2xl">
-                {description}
-              </p>
-            </motion.div>
-
-            {/* Enhanced Stats/Highlights */}
-            <motion.div 
-              className="grid grid-cols-2 gap-6 pt-4"
-              variants={textVariants}
-            >
-
-            </motion.div>
-          </motion.div>
+          {/* Text Content */}
+          <div className="w-full lg:w-1/2 text-center lg:text-left space-y-4 md:space-y-6">
+            <p className="text-sm uppercase tracking-[0.2em] text-white/50 font-medium">{tags}</p>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">{person}</h2>
+            <p className="text-lg leading-relaxed text-white/80 max-w-xl mx-auto lg:mx-0">{description}</p>
+          </div>
         </div>
       </motion.div>
-
-      {/* Background Name Text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-[8vw] font-black uppercase leading-none text-[#9fe80c]/10 sm:text-[6vw] lg:text-[8vw] pointer-events-none">
-        {badge}
-      </div>
-    </motion.section>
+    </div>
   );
 };
 
-// Section 1: Arun Goyal
-const Section1 = ({ scrollYProgress }) => (
-  <TeamCard
-    person="Arun Goyal"
-    image={ArunImage}
-    badge="Executive Designer"
-    tags="Design · Experience · Interface"
-    description="Arun crafts immersive product journeys that balance narrative, usability, and aesthetic precision. His systems thinking keeps every interface adaptable and future-ready."
-    scrollYProgress={scrollYProgress}
-    scaleRange={[1, 0.9]}
-    rotateRange={[0, -3]}
-    layoutDirection="row"
-  />
-);
-
-// Section 2: kundan Gupta
-const Section2 = ({ scrollYProgress }) => (
-  <TeamCard
-    person="Kundan Gupta"
-    image={kundanImage}
-    badge="Marketing Expert"
-    tags="STRATEGY · PERFORMANCE · STORY"
-    description="Kundan bridges cultural intuition with data-led insight to build campaigns that scale without losing soul. Every launch blends experimentation, measurement, and a human pulse you can feel in-market."
-    scrollYProgress={scrollYProgress}
-    scaleRange={[0.9, 1]}
-    rotateRange={[3, 0]}
-    layoutDirection="row-reverse"
-  />
-);
-
-// section 3 : Mayuresh
-
-export default Page3ofAgence;
+// --- Main Page Component ---
+export default function Page3ofAgence() {
+  return (
+    <div className="relative">
+      <TeamCard
+        person="Harsh gupta"
+        image={harshImage}
+        badge="Lead Developer"
+        tags="Development · Innovation · Code"
+        description="Harsh is a visionary developer who transforms complex ideas into seamless digital experiences. With a keen eye for detail and a passion for innovation, he crafts solutions that are not only functional but also engaging and user-centric."
+        layoutDirection="row"
+      />
+      <TeamCard
+        person="Arun Goyal"
+        image={ArunImage}
+        badge="UI / UX Designer"
+        tags="STRATEGY · PERFORMANCE · STORY"
+        description="Specialized in creating user-centric digital experiences that merge functionality with visual clarity. Focused on designing intuitive interfaces, crafting seamless user journeys, and delivering impactful solutions through research-driven design and modern prototyping practices."
+        layoutDirection="row-reverse"
+      />
+      <TeamCard
+        person="Mayank"
+        image={mayankimage}
+        badge="App Developer"
+        tags="Systems Architect · Scalable Code · Robust Solutions"
+        description="Explores the edge of technology with curiosity and passion, blending problem-solving with creative development. Brings adaptability, a drive for continuous learning, and a knack for turning complex ideas into scalable, impactful solutions."
+        layoutDirection="row"
+      />
+      <TeamCard
+        person="Kundan Gupta"
+        image={kundan2Image}
+        badge="Marketing Expert"
+        tags="STRATEGY · PERFORMANCE · STORY"
+        description="Kundan bridges cultural intuition with data-led insight to build campaigns that scale without losing soul. Every launch blends experimentation, measurement, and a human pulse you can feel in-market."
+        layoutDirection="row-reverse"
+      />
+      <TeamCard
+        person="Mayuresh"
+        image={mayureshImage}
+        badge="Digital Creator"
+        tags="STRATEGY · PERFORMANCE · STORY"
+        description="Mayuresh crafts immersive product journeys that balance narrative, usability, and aesthetic precision. His systems thinking keeps every interface adaptable and future-ready."
+        layoutDirection="row"
+      />
+    </div>
+  );
+}

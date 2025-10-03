@@ -4,6 +4,11 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Page3ofAgence from './Page3ofAgence';
+import kundanImage from '/kundan.png';
+import mayureshImage from '/mayuresh.png';
+import ArunImage from '/arun.png';
+import harshImage from '/harsh.png';
+import mayankimage from '/mayank.png';
 
 // Register GSAP plugins once at the top level
 gsap.registerPlugin(ScrollTrigger);
@@ -16,17 +21,11 @@ const Agence = () => {
 
   // --- Data ---
   const imageArray = useMemo(() => [
-    'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/HugoJoseph_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/ChantalG_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/MyleneS_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/SophieA_480x640-480x640.jpg',
-    'https://k72.ca/uploads/teamMembers/Claire_480x640-480x640.jpg',
+    harshImage,
+    ArunImage,
+    mayankimage,
+    kundanImage,
+    mayureshImage,
   ], []);
 
   // const heroStats = useMemo(() => [
