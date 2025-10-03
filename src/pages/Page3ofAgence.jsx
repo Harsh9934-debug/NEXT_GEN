@@ -228,7 +228,7 @@ const Section1 = ({ scrollYProgress }) => (
   <TeamCard
     person="Arun Goyal"
     image={ArunImage}
-    badge="Exexutive Designer"
+    badge="Executive Designer"
     tags="Design · Experience · Interface"
     description="Arun crafts immersive product journeys that balance narrative, usability, and aesthetic precision. His systems thinking keeps every interface adaptable and future-ready."
     scrollYProgress={scrollYProgress}
