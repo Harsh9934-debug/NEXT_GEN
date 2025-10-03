@@ -209,21 +209,14 @@ const TeamCard = ({
               className="grid grid-cols-2 gap-6 pt-4"
               variants={textVariants}
             >
-              <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-[#9fe80c]">50+</div>
-                <div className="text-sm text-white/60 mt-1">Projects</div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-[#9fe80c]">5yrs</div>
-                <div className="text-sm text-white/60 mt-1">Experience</div>
-              </div>
+
             </motion.div>
           </motion.div>
         </div>
       </motion.div>
 
       {/* Background Name Text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-[20vw] font-black uppercase leading-none text-[#9fe80c]/10 sm:text-[6vw] lg:text-[8vw] pointer-events-none">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-[8vw] font-black uppercase leading-none text-[#9fe80c]/10 sm:text-[6vw] lg:text-[8vw] pointer-events-none">
         {badge}
       </div>
     </motion.section>
