@@ -80,7 +80,7 @@ export default function Page3ofAgence() {
       <TeamCard
         person="Harsh gupta"
         image={harshImage}
-        badge="Lead Developer"
+        badge="Full-stack Developer"
         tags="Development · Innovation · Code"
         description="Harsh is a visionary developer who transforms complex ideas into seamless digital experiences. With a keen eye for detail and a passion for innovation, he crafts solutions that are not only functional but also engaging and user-centric."
         layoutDirection="row"
