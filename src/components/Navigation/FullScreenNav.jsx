@@ -84,63 +84,10 @@ const FullScreenNav = () => {
             </div>
             <div ref={fullNavLinksRef} className='relative'>
                 <div className="navlink flex w-full justify-between lg:p-5 p-2 items-start">
-                    <div className=''>
-                        <div className='lg:w-52 w-36 group cursor-pointer'>
-                            {/* NEXTGEN Text Logo */}
-                            <div className='relative'>
-                                <h1 className='font-black lg:text-3xl text-xl tracking-[0.2em] transition-all duration-500
-                                               text-white group-hover:scale-110 group-hover:tracking-[0.25em]
-                                               relative z-10'>
-                                    <span className='inline-block transform transition-transform duration-300 
-                                                   group-hover:-rotate-2 group-hover:translate-y-[-2px]'>
-                                        NEXT
-                                    </span>
-                                    <span className='text-[#D3FD50] relative inline-block ml-1 
-                                                   transform transition-all duration-300
-                                                   group-hover:rotate-2 group-hover:translate-y-[2px]
-                                                   drop-shadow-[0_0_8px_rgba(211,253,80,0.3)]'>
-                                        GEN
-                                        
-                                        {/* Animated underline with gradient */}
-                                        <div className='absolute bottom-0 left-0 h-1 bg-gradient-to-r 
-                                                       from-[#D3FD50] via-[#B8E63C] to-[#D3FD50] w-0 
-                                                       group-hover:w-full transition-all duration-700 ease-out
-                                                       shadow-[0_2px_8px_rgba(211,253,80,0.4)]'></div>
-                                        
-                                        {/* Pulse effect on GEN */}
-                                        <div className='absolute inset-0 text-[#D3FD50] opacity-0 
-                                                       group-hover:opacity-30 group-hover:animate-pulse
-                                                       transition-opacity duration-300'>
-                                            GEN
-                                        </div>
-                                    </span>
-                                </h1>
-                                
-                                {/* Enhanced background glow effect */}
-                                <div className='absolute inset-0 bg-gradient-radial from-[#D3FD50]/20 
-                                               via-[#D3FD50]/10 to-transparent blur-2xl rounded-2xl 
-                                               opacity-0 group-hover:opacity-100 transition-all duration-500 
-                                               -z-10 scale-150'></div>
-                                
-                                {/* Multiple floating particles with different animations */}
-                                <div className='absolute -top-2 -right-2 w-2 h-2 bg-[#D3FD50] rounded-full 
-                                               opacity-0 group-hover:opacity-100 
-                                               group-hover:animate-[float_2s_ease-in-out_infinite]
-                                               transition-all duration-300'></div>
-                                
-                                <div className='absolute top-1/2 -left-3 w-1.5 h-1.5 bg-white/60 rounded-full 
-                                               opacity-0 group-hover:opacity-100 
-                                               group-hover:animate-[bounce_1.5s_ease-in-out_infinite]
-                                               transition-all duration-300' 
-                                     style={{animationDelay: '0.3s'}}></div>
-                                     
-                                <div className='absolute -bottom-2 left-1/4 w-1 h-1 bg-[#D3FD50]/80 rounded-full 
-                                               opacity-0 group-hover:opacity-100 
-                                               group-hover:animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]
-                                               transition-all duration-300'
-                                     style={{animationDelay: '0.6s'}}></div>
-                            </div>
-                        </div>
+                    <div>
+                        <a href="#/" onClick={() => setNavOpen(false)} className='inline-block h-8 lg:h-10'>
+                            <img src="/logo2.svg" alt="Logo" className='h-full w-auto object-contain' />
+                        </a>
                     </div>
                     <div onClick={() => {
                         setNavOpen(false)
@@ -152,8 +99,10 @@ const FullScreenNav = () => {
                 </div>
                 <div className=' py-36'>
                     <div className='link origin-top relative border-t-1 border-white'>
-                        <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>Projects</h1>
-                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                        <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>
+                            <a href="#/projects" onClick={() => setNavOpen(false)} className='block cursor-pointer'>Projects</a>
+                        </h1>
+                        <div className='moveLink pointer-events-none absolute text-black flex top-0 bg-[#D3FD50]'>
                             <div className='moveX flex items-center'>
                                 <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>Pour Tout voir</h2>
                                 <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
@@ -169,8 +118,10 @@ const FullScreenNav = () => {
                         </div>
                     </div>
                     <div className='link origin-top relative border-t-1 border-white'>
-                        <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>Agence</h1>
-                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                        <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>
+                            <a href="#/agence" onClick={() => setNavOpen(false)} className='block cursor-pointer'>Agence</a>
+                        </h1>
+                        <div className='moveLink pointer-events-none absolute text-black flex top-0 bg-[#D3FD50]'>
                             <div className='moveX flex items-center'>
                                 <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>Pour Tout voir</h2>
                                 <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
@@ -186,8 +137,10 @@ const FullScreenNav = () => {
                         </div>
                     </div>
                     <div className='link origin-top relative border-t-1 border-white'>
-                        <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>Contact</h1>
-                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                        <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>
+                            <a href="#/" onClick={() => setNavOpen(false)} className='block cursor-pointer'>Contact</a>
+                        </h1>
+                        <div className='moveLink pointer-events-none absolute text-black flex top-0 bg-[#D3FD50]'>
                             <div className='moveX flex items-center'>
                                 <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>Pour Tout voir</h2>
                                 <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
