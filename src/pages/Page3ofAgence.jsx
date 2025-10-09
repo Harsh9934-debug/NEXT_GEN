@@ -89,7 +89,7 @@ export default function Page3ofAgence() {
         person="Arun Goyal"
         image={ArunImage}
         badge="UI / UX Designer"
-        tags="STRATEGY · PERFORMANCE · STORY"
+        tags="EFFICIENCY · CONSISTENCY · PRECISION"
         description="Specialized in creating user-centric digital experiences that merge functionality with visual clarity. Focused on designing intuitive interfaces, crafting seamless user journeys, and delivering impactful solutions through research-driven design and modern prototyping practices."
         layoutDirection="row-reverse"
       />
