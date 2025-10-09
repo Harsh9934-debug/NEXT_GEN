@@ -13,7 +13,7 @@ const Projects = () => {
       id: 'pjc',
       title: 'PJC',
       subtitle: 'Personalizing pharmacy care for millions of Quebecers with a seamless digital ecosystem.',
-      year: '2024',
+      year: '2025',
       services: ['E-commerce', 'Service Design'],
       image: 'https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg'
     },
@@ -21,7 +21,7 @@ const Projects = () => {
       id: 'widescape',
       title: 'WIDESCAPE',
       subtitle: 'Introducing the first electric stand-up snowmobile to riders worldwide in record time.',
-      year: '2024',
+      year: '2025',
       services: ['Launch Strategy', 'Product Film'],
       image: 'https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---Thumbnail-1280x960.jpg'
     },
@@ -29,7 +29,7 @@ const Projects = () => {
       id: 'oka',
       title: 'OKA',
       subtitle: 'Reawakening a heritage dessert icon with a modern, appetite-inducing narrative.',
-      year: '2023',
+      year: '2025',
       services: ['Brand Narrative', 'Content Suite'],
       image: 'https://k72.ca/uploads/caseStudies/OKA/OKA_thumbnail-1280x960.jpg'
     },
@@ -37,7 +37,7 @@ const Projects = () => {
       id: 'opto',
       title: 'OPTO',
       subtitle: 'Designing a modular retail concept that shapeshifts with every season and store footprint.',
-      year: '2023',
+      year: '2024',
       services: ['Spatial Design', '3D Interactive'],
       image: 'https://k72.ca/uploads/caseStudies/Opto/thumbnailimage_opto-1280x960.jpg'
     },
@@ -45,7 +45,7 @@ const Projects = () => {
       id: 'lamajeure',
       title: 'La Majeure',
       subtitle: 'Transforming cinematic sound into a living brand experience audiences can step inside.',
-      year: '2022',
+      year: '2024',
       services: ['Audio Identity', 'Immersive Installations'],
       image: 'https://k72.ca/uploads/caseStudies/LAMAJEURE_-_Son_sur_mesure/chalaxeur-thumbnail_img-1280x960.jpg'
     },
@@ -53,7 +53,7 @@ const Projects = () => {
       id: 'shelton',
       title: 'Shelton',
       subtitle: 'Giving a premium spirits house a collector-worthy visual universe across every touchpoint.',
-      year: '2022',
+      year: '2024',
       services: ['Brand System', 'Packaging Design'],
       image: 'https://k72.ca/uploads/caseStudies/SHELTON/thumbnailimage_shelton-1280x960.jpg'
     }
