@@ -18,56 +18,6 @@ const Contact = () => {
       {/* Content */}
       <section className="relative px-4 sm:px-6 lg:px-8 pb-24">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {/* Form */}
-          <div className="lg:col-span-2">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <label className="block">
-                  <span className="text-sm text-white/70">First name</span>
-                  <input type="text" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="First name" />
-                </label>
-                <label className="block">
-                  <span className="text-sm text-white/70">Last name</span>
-                  <input type="text" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="Last name" />
-                </label>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <label className="block">
-                  <span className="text-sm text-white/70">Email</span>
-                  <input type="email" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="you@gmail.com" />
-                </label>
-                <label className="block">
-                  <span className="text-sm text-white/70">Phone</span>
-                  <input type="tel" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="+1 9876234569" />
-                </label>
-              </div>
-
-              <label className="block">
-                <span className="text-sm text-white/70">What are you looking to build?</span>
-                <select className="mt-1 h-10 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]">
-                  <option>Website / Marketing Site</option>
-                  <option>Web App / SaaS</option>
-                  <option>Mobile App</option>
-                  <option>Branding / Identity</option>
-                  <option>Other</option>
-                </select>
-              </label>
-
-              <label className="block">
-                <span className="text-sm text-white/70">Message</span>
-                <textarea rows={6} className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="Tell us about your goals, timeline, and constraints."></textarea>
-              </label>
-
-              <div className="flex items-center gap-3">
-                <button type="button" className="rounded-full bg-[#D3FD50] text-black font-semibold px-6 py-3 hover:brightness-95 active:brightness-90 transition">
-                  Send inquiry
-                </button>
-              </div>
-            </form>
-          </div>
-
-          {/* Company info */}
           <aside className="lg:col-span-1 space-y-6">
             <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
               <h3 className="text-lg font-semibold">Reach us</h3>
@@ -77,7 +27,7 @@ const Contact = () => {
             </div>
 
             <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-              <h3 className="text-lg font-semibold">Locations</h3>
+              <h3 className="text-lg font-semibold">Location</h3>
               <div className="mt-4 space-y-2 text-white/80">
                 <p>Banglore, IN</p>
                 <p>Remote-first</p>
