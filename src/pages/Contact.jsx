@@ -24,28 +24,28 @@ const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <label className="block">
                   <span className="text-sm text-white/70">First name</span>
-                  <input type="text" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="Jane" />
+                  <input type="text" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="First name" />
                 </label>
                 <label className="block">
                   <span className="text-sm text-white/70">Last name</span>
-                  <input type="text" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="Doe" />
+                  <input type="text" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="Last name" />
                 </label>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <label className="block">
                   <span className="text-sm text-white/70">Email</span>
-                  <input type="email" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="you@company.com" />
+                  <input type="email" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="you@gmail.com" />
                 </label>
                 <label className="block">
                   <span className="text-sm text-white/70">Phone</span>
-                  <input type="tel" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="+1 (555) 000-0000" />
+                  <input type="tel" className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]" placeholder="+1 9876234569" />
                 </label>
               </div>
 
               <label className="block">
                 <span className="text-sm text-white/70">What are you looking to build?</span>
-                <select className="mt-1 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]">
+                <select className="mt-1 h-10 w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-[#D3FD50] focus:ring-1 focus:ring-[#D3FD50]">
                   <option>Website / Marketing Site</option>
                   <option>Web App / SaaS</option>
                   <option>Mobile App</option>
@@ -63,7 +63,6 @@ const Contact = () => {
                 <button type="button" className="rounded-full bg-[#D3FD50] text-black font-semibold px-6 py-3 hover:brightness-95 active:brightness-90 transition">
                   Send inquiry
                 </button>
-                <span className="text-sm text-white/50">No spam. We’ll get back within 1–2 business days.</span>
               </div>
             </form>
           </div>
@@ -73,27 +72,19 @@ const Contact = () => {
             <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
               <h3 className="text-lg font-semibold">Reach us</h3>
               <div className="mt-4 space-y-2 text-white/80">
-                <p>hello@nextgen.studio</p>
-                <p>+1 (555) 555-0101</p>
+                <p>harshkumargupta630@gmail.com</p>
               </div>
             </div>
 
             <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
               <h3 className="text-lg font-semibold">Locations</h3>
               <div className="mt-4 space-y-2 text-white/80">
-                <p>Mumbai, IN</p>
+                <p>Banglore, IN</p>
                 <p>Remote-first</p>
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-              <h3 className="text-lg font-semibold">Social</h3>
-              <div className="mt-4 flex gap-4 text-white/80">
-                <a href="#" className="hover:text-[#D3FD50]">Twitter</a>
-                <a href="#" className="hover:text-[#D3FD50]">LinkedIn</a>
-                <a href="#" className="hover:text-[#D3FD50]">Dribbble</a>
-              </div>
-            </div>
+            
           </aside>
         </div>
       </section>
