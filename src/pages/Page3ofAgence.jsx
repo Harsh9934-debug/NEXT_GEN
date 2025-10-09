@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import { useScroll, useTransform, motion } from "framer-motion";
 import kundanImage from '/kundan.png';
-import mayuresh2Image from '/mayuresh2.png';
-import ArunImage from '/arun.png';
+import mayuresh2Image from '/mayuresh3.png';
+import arunImage from '/arun2.png';
 import harshImage from '/harsh.png';
 import mayankimage from '/mayank.png';
-import kundan2Image from '/kundan2.png';
+import kundan2Image from '/kundan3.png';
 
 // --- Card Component with Enhanced Parallax & Staggered Animations ---
 const TeamCard = ({
@@ -87,7 +87,7 @@ export default function Page3ofAgence() {
       />
       <TeamCard
         person="Arun Goyal"
-        image={ArunImage}
+        image={arunImage}
         badge="UI / UX Designer"
         tags="EFFICIENCY · CONSISTENCY · PRECISION"
         description="Specialized in creating user-centric digital experiences that merge functionality with visual clarity. Focused on designing intuitive interfaces, crafting seamless user journeys, and delivering impactful solutions through research-driven design and modern prototyping practices."

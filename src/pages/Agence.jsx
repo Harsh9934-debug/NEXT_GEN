@@ -21,11 +21,11 @@ const Agence = () => {
 
   // --- Data ---
   const imageArray = useMemo(() => [
-    harshImage,
-    ArunImage,
-    mayankimage,
-    kundanImage,
-    mayureshImage,
+    // harshImage,
+    // ArunImage,
+    // mayankimage,
+    // kundanImage,
+    // mayureshImage,
   ], []);
 
   // const heroStats = useMemo(() => [
@@ -116,20 +116,20 @@ const Agence = () => {
   }, [isDesktop, imageArray]);
 
   return (
-    <div className='parent bg-[#f9f8f4] text-[#0d0d0d] font-sans'>
+    <div className='parent text-[#0d0d0d] font-sans'>
       {/* HERO SECTION */}
       <section id='page1' className='relative px-5 sm:px-8 lg:px-20 pt-28 pb-24 lg:pb-36'>
         {isDesktop && (
           <div
             ref={imageDivRef}
-            className='absolute right-[8vw] top-32 hidden w-[22vw] max-w-sm overflow-hidden rounded-[28px] border border-black/5 shadow-2xl lg:block'
+            className='absolute right-[8vw] top-32 hidden w-[22vw] max-w-sm overflow-hidden rounded-[28px] lg:block'
           >
-            <img
+            {/* <img
               ref={imageRef}
               className='h-full w-full object-cover'
-              src={imageArray[0]} // Set initial image
-              alt='Portrait transition'
-            />
+              // src={imageArray[0]} // Set initial image
+              // alt='Portrait transition'
+            /> */}
           </div>
         )}
 
