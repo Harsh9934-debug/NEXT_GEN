@@ -4,11 +4,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Page3ofAgence from './Page3ofAgence';
-import kundanImage from '/kundan.png';
-import mayureshImage from '/mayuresh.png';
-import ArunImage from '/arun.png';
-import harshImage from '/harsh.png';
-import mayankimage from '/mayank.png';
 
 // Register GSAP plugins once at the top level
 gsap.registerPlugin(ScrollTrigger);

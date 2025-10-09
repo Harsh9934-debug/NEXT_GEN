@@ -1,11 +1,8 @@
 import React, { useRef } from 'react';
 import { useScroll, useTransform, motion } from "framer-motion";
-import kundanImage from '/kundan.png';
-import mayuresh2Image from '/mayuresh3.png';
-import arunImage from '/arun2.png';
-import harshImage from '/harsh.png';
-import mayankimage from '/mayank.png';
-import kundan2Image from '/kundan3.png';
+// Use public asset paths directly instead of importing from "/public".
+// In Vite, anything under /public is served at the root and can be referenced by absolute paths.
+// This avoids Rollup errors in Vercel when trying to resolve ESM imports like "/image.png".
 
 // --- Card Component with Enhanced Parallax & Staggered Animations ---
 const TeamCard = ({
@@ -79,7 +76,7 @@ export default function Page3ofAgence() {
     <div className="relative">
       <TeamCard
         person="Harsh gupta"
-        image={harshImage}
+        image="/harsh.png"
         badge="Full-stack Developer"
         tags="Development · Innovation · Code"
         description="Harsh is a visionary developer who transforms complex ideas into seamless digital experiences. With a keen eye for detail and a passion for innovation, he crafts solutions that are not only functional but also engaging and user-centric."
@@ -87,7 +84,7 @@ export default function Page3ofAgence() {
       />
       <TeamCard
         person="Arun Goyal"
-        image={arunImage}
+        image="/arun2.png"
         badge="UI / UX Designer"
         tags="EFFICIENCY · CONSISTENCY · PRECISION"
         description="Specialized in creating user-centric digital experiences that merge functionality with visual clarity. Focused on designing intuitive interfaces, crafting seamless user journeys, and delivering impactful solutions through research-driven design and modern prototyping practices."
@@ -95,7 +92,7 @@ export default function Page3ofAgence() {
       />
       <TeamCard
         person="Mayank"
-        image={mayankimage}
+        image="/mayank.png"
         badge="App Developer"
         tags="Systems Architect · Scalable Code · Robust Solutions"
         description="Explores the edge of technology with curiosity and passion, blending problem-solving with creative development. Brings adaptability, a drive for continuous learning, and a knack for turning complex ideas into scalable, impactful solutions."
@@ -103,15 +100,15 @@ export default function Page3ofAgence() {
       />
       <TeamCard
         person="Kundan Gupta"
-        image={kundan2Image}
-        badge="Marketing Expert"
+        image="/kundan3.png"
+        badge="Digital  Marketing "
         tags="STRATEGY · PERFORMANCE · STORY"
         description="Kundan bridges cultural intuition with data-led insight to build campaigns that scale without losing soul. Every launch blends experimentation, measurement, and a human pulse you can feel in-market."
         layoutDirection="row-reverse"
       />
       <TeamCard
         person="Mayuresh"
-        image={mayuresh2Image}
+        image="/mayuresh3.png"
         badge="Digital Creator"
         tags="STRATEGY · PERFORMANCE · STORY"
         description="Mayuresh crafts immersive product journeys that balance narrative, usability, and aesthetic precision. His systems thinking keeps every interface adaptable and future-ready."
