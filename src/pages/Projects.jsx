@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import ProjectCard from '../components/projects/ProjectCard'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
+import devai from '/devai.png'
 
 
 const Projects = () => {
@@ -10,51 +11,59 @@ const Projects = () => {
 
   const projects = useMemo(() => ([
     {
-      id: 'pjc',
-      title: 'PJC',
-      subtitle: 'Personalizing pharmacy care for millions of Quebecers with a seamless digital ecosystem.',
+      id: 'healthplus-pharmacy',
+      title: 'HealthPlus Pharmacy',
+      subtitle: 'We built an online store that makes refills and shopping simple for everyone.',
       year: '2025',
       services: ['E-commerce', 'Service Design'],
       image: 'https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg'
     },
     {
-      id: 'widescape',
-      title: 'WIDESCAPE',
-      subtitle: 'Introducing the first electric stand-up snowmobile to riders worldwide in record time.',
+      id: "DEV_AI",
+      title: 'Dev AI',
+      subtitle: 'We developed an AI-powered platform to streamline coding tasks for developers.',
+      year: '2025',
+      services: ['AI Integration', 'Web Development'],
+      image: 'devai.png'
+    },
+    {
+      id: 'voltride-snow',
+      title: 'VoltRide Snow',
+      subtitle: 'We launched a stand-up electric snowmobile and got it in front of riders fast.',
       year: '2025',
       services: ['Launch Strategy', 'Product Film'],
       image: 'https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---Thumbnail-1280x960.jpg'
     },
     {
-      id: 'oka',
-      title: 'OKA',
-      subtitle: 'Reawakening a heritage dessert icon with a modern, appetite-inducing narrative.',
+      id: 'sweetbite-desserts',
+      title: 'SweetBite Desserts',
+      subtitle: 'We refreshed a classic dessert brand with a warm, modern look and story.',
       year: '2025',
-      services: ['Brand Narrative', 'Content Suite'],
+      services: ['Brand Story', 'Content'],
       image: 'https://k72.ca/uploads/caseStudies/OKA/OKA_thumbnail-1280x960.jpg'
     },
     {
-      id: 'opto',
-      title: 'OPTO',
-      subtitle: 'Designing a modular retail concept that shapeshifts with every season and store footprint.',
+      id: 'opto-modular-retail',
+      title: 'Opto Modular Retail',
+      subtitle: 'We designed a flexible retail setup that changes with seasons and store sizes.',
       year: '2024',
       services: ['Spatial Design', '3D Interactive'],
       image: 'https://k72.ca/uploads/caseStudies/Opto/thumbnailimage_opto-1280x960.jpg'
     },
     {
-      id: 'lamajeure',
-      title: 'La Majeure',
-      subtitle: 'Transforming cinematic sound into a living brand experience audiences can step inside.',
+      id: 'cinematic-sound-brand',
+      title: 'Cinematic Sound Brand',
+      subtitle: 'We turned film sound into a brand people can see and feel.',
       year: '2024',
-      services: ['Audio Identity', 'Immersive Installations'],
+      services: ['Sound Branding', 'Experiential'],
       image: 'https://k72.ca/uploads/caseStudies/LAMAJEURE_-_Son_sur_mesure/chalaxeur-thumbnail_img-1280x960.jpg'
     },
     {
-      id: 'shelton',
-      title: 'Shelton',
-      subtitle: 'Giving a premium spirits house a collector-worthy visual universe across every touchpoint.',
+      id: 'shelton-spirits',
+      title: 'Shelton Spirits',
+      subtitle: 'We created packaging and visuals that feel premium and collectible.',
       year: '2024',
-      services: ['Brand System', 'Packaging Design'],
+      services: ['Brand System', 'Packaging'],
       image: 'https://k72.ca/uploads/caseStudies/SHELTON/thumbnailimage_shelton-1280x960.jpg'
     }
   ]), [])
