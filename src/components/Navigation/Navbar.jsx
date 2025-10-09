@@ -12,15 +12,16 @@ const Navbar = () => {
     const [navColor, setNavColor] = useContext(NavbarColorContext)
 
     const isAgence = location.pathname === '/agence'
+    const isProjects = location.pathname === '/projects'
 
     return (
         <div className='z-4 flex fixed top-0 w-full  items-start justify-between'>
             <div className='lg:p-8 p-2 '>
-                <a href="#/" className='block lg:w-2 w-2 min-w-[7rem] group cursor-pointer'>
+                <a href="#/" className='inline-block h-8 lg:h-10 group cursor-pointer'>
                     <img
-                        src={navColor === 'white' ? '/logo2.svg' : '/logo.svg'}
+                        src={isProjects ? '/logo2.svg' : (navColor === 'white' ? '/logo2.svg' : '/logo.svg')}
                         alt="Site logo"
-                        className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                        className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                 </a>
             </div>
