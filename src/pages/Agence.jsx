@@ -111,7 +111,7 @@ const Agence = () => {
   }, [isDesktop, imageArray]);
 
   return (
-    <div className='parent text-[#0d0d0d] font-sans'>
+    <div className='parent text-white bg-black font-sans'>
       {/* HERO SECTION */}
       <section id='page1' className='relative px-5 sm:px-8 lg:px-20 pt-28 pb-24 lg:pb-36'>
         {isDesktop && (
@@ -129,7 +129,7 @@ const Agence = () => {
         )}
 
         <div className='relative mx-auto max-w-6xl'>
-          <div className='flex flex-col gap-2 uppercase tracking-[0.35em] text-[11px] text-black/45 sm:flex-row sm:items-center sm:justify-between'>
+          <div className='flex flex-col gap-2 uppercase tracking-[0.35em] text-[11px] text-white sm:flex-row sm:items-center sm:justify-between'>
             <span>Agency NEXTGEN</span>
             <span>India · Bengaluru </span>
           </div>
@@ -138,11 +138,11 @@ const Agence = () => {
             <div className='flex flex-col gap-8 max-w-3xl'>
               <h3 className='text-4xl md:text-6xl lg:text-6xl font-bold leading-tight tracking-[-0.02em]'>
               We don't just build digital assets, we create unforgettable human experiences. </h3>
-              <p className='text-lg leading-relaxed text-black/70'>
+              <p className='text-lg leading-relaxed text-white/80'>
                 Welcome to NEXTGEN, where we build living brands and digital products that are not only human, swift, and unmistakably yours but also thrive in today's digital landscape. We're a full-service creative agency dedicated to crafting digital experiences that connect with people and deliver results.  </p>
-              <div className='flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em] text-black/55'>
+              <div className='flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em]'>
                 {servicePillars.map(pillar => (
-                  <span key={pillar} className='rounded-full border border-black/10 bg-white/80 px-4 py-2 shadow-sm backdrop-blur transition-colors duration-300 hover:bg-black hover:text-white'>
+                  <span key={pillar} className='rounded-full border border-black/10 bg-white px-4 py-2 shadow-sm backdrop-blur transition-colors duration-300  text-black'>
                     {pillar}
                   </span>
                 ))}
@@ -156,7 +156,7 @@ const Agence = () => {
                 </Link>
                 <a
                   href='mailto:harshkumargupta630@gmail.com'
-                  className='inline-flex items-center justify-center rounded-full border border-black/15 bg-transparent px-6 py-3 text-black/70 transition duration-300 hover:border-black/40 hover:text-black'
+                  className='inline-flex items-center justify-center rounded-full border border-white/30 bg-transparent px-6 py-3 text-white transition duration-300 hover:border-white/60 hover:bg-white/10'
                 >
                   Start a project
                 </a>
@@ -185,7 +185,7 @@ const Agence = () => {
                 key={item.label}
                 className='rounded-[22px] border border-white/10 bg-white/5 p-5 backdrop-blur transition hover:border-white/25 hover:bg-white/10'
               >
-                <p className='text-[11px] uppercase tracking-[0.35em] text-white/55'>{item.label}</p>
+                <p className='text-[11px] uppercase tracking-[0.35em] text-white'>{item.label}</p>
                 <p className='mt-3 text-base leading-relaxed text-white'>{item.value}</p>
               </div>
             ))}

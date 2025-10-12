@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import ProjectCard from '../components/projects/ProjectCard'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import devai from '/devai.png'
+// Using public path for images referenced directly in data. If bundling is preferred, move to /src/assets.
 
 
 const Projects = () => {
@@ -19,12 +19,12 @@ const Projects = () => {
       image: 'https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg'
     },
     {
-      id: "DEV_AI",
+      id: 'DEV_AI',
       title: 'Dev AI',
       subtitle: 'We developed an AI-powered platform to streamline coding tasks for developers.',
       year: '2025',
       services: ['AI Integration', 'Web Development'],
-      image: 'devai.png'
+      image: '/devai.png'
     },
     {
       id: 'voltride-snow',

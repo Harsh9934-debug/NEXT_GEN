@@ -79,7 +79,7 @@ export default function Page3ofAgence() {
         image="/harsh.png"
         badge="Full-stack Developer"
         tags="Development · Innovation · Code"
-        description="Harsh is a visionary developer who transforms complex ideas into seamless digital experiences. With a keen eye for detail and a passion for innovation, he crafts solutions that are not only functional but also engaging and user-centric."
+        description="I’m a full-stack developer who loves turning complex ideas into fast, reliable products. I focus on crafting smooth, intuitive experiences that make technology feel simple and human."
         layoutDirection="row"
       />
       <TeamCard
@@ -103,7 +103,7 @@ export default function Page3ofAgence() {
         image="/kundan3.png"
         badge="Digital  Marketing "
         tags="STRATEGY · PERFORMANCE · STORY"
-        description="Kundan bridges cultural intuition with data-led insight to build campaigns that scale without losing soul. Every launch blends experimentation, measurement, and a human pulse you can feel in-market."
+        description="Blends culture and analytics to craft campaigns that grow with heart. Each launch merges bold experimentation, sharp measurement, and a human pulse that resonates beyond the numbers."
         layoutDirection="row-reverse"
       />
       <TeamCard
@@ -111,7 +111,7 @@ export default function Page3ofAgence() {
         image="/mayuresh3.png"
         badge="Digital Creator"
         tags="STRATEGY · PERFORMANCE · STORY"
-        description="Mayuresh crafts immersive product journeys that balance narrative, usability, and aesthetic precision. His systems thinking keeps every interface adaptable and future-ready."
+        description="Connects culture and data to create campaigns that scale authentically. Every project balances creative risk, smart optimization, and a sense of humanity that stands out in the market."
         layoutDirection="row"
       />
     </div>
