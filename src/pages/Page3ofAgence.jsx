@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, useSpring, motion } from "framer-motion";
 
-// Enhanced TeamCard Component with Multiple Animations
 const TeamCard = ({
   person,
   image,
@@ -16,17 +15,24 @@ const TeamCard = ({
     offset: ["start end", "end start"]
   });
 
-  // Main container animations
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
+  // Smooth the scroll progress to reduce jitter
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 70,
+    damping: 20,
+    mass: 0.25
+  });
+
+  // Main container animations (gentler ranges)
+  const opacity = useTransform(smoothProgress, [0, 0.12, 0.88, 1], [0, 1, 1, 0]);
+  const scale = useTransform(smoothProgress, [0, 0.5, 1], [0.96, 1, 0.98]);
   
-  // Parallax effects
-  const contentY = useTransform(scrollYProgress, [0, 1], [-80, 80]);
-  const imageY = useTransform(scrollYProgress, [0, 1], [40, -40]);
-  const textY = useTransform(scrollYProgress, [0, 1], [-40, 40]);
+  // Parallax effects (reduced for smoothness)
+  const contentY = useTransform(smoothProgress, [0, 1], [-30, 30]);
+  const imageY = useTransform(smoothProgress, [0, 1], [16, -16]);
+  const textY = useTransform(smoothProgress, [0, 1], [-20, 20]);
 
   // Floating animation for badge
-  const badgeY = useTransform(scrollYProgress, [0, 0.5, 1], [0, -10, 0]);
+  const badgeY = useTransform(smoothProgress, [0, 0.5, 1], [0, -8, 0]);
 
   return (
     <div ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -49,24 +55,24 @@ const TeamCard = ({
       
       <motion.div
         style={{ opacity, scale }}
-        className="w-full h-full flex items-center justify-center p-4 bg-gradient-to-br from-[#050505] via-[#090909] to-[#0f0f0f] text-white"
+        className="w-full h-full flex items-center justify-center p-4 bg-gradient-to-br from-[#050505] via-[#090909] to-[#0f0f0f] text-white will-change-transform"
       >
         <motion.div
           style={{ y: contentY }}
-          className={`relative z-10 w-full max-w-6xl flex flex-col gap-8 lg:gap-16 items-center justify-center p-6 md:p-12 rounded-3xl backdrop-blur-md ${layoutDirection === 'row-reverse' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
+          className={`relative z-10 w-full max-w-6xl flex flex-col gap-8 lg:gap-16 items-center justify-center p-6 md:p-12 rounded-3xl backdrop-blur-md will-change-transform ${layoutDirection === 'row-reverse' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
         >
           {/* Image Section */}
           <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-end">
             <motion.div
               style={{ y: imageY }}
-              className="relative aspect-[3/4] w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl group"
+              className="relative aspect-[3/4] w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl group will-change-transform"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <motion.img
                 src={image}
                 alt={`Portrait of ${person}`}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover will-change-transform"
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.6 }}
               />
