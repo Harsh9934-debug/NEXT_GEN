@@ -207,8 +207,6 @@ const Agence = () => {
         </div>
       </section>
 
-
-      {/* after this */}
       
       {/* Page 3 of Agence */}
       <Page3ofAgence />

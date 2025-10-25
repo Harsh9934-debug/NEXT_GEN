@@ -296,7 +296,12 @@ const ServicesSection = () => {
                 damping: 15
               }}
               viewport={{ once: true, margin: "-50px" }}
-              className="group relative bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+              className={`group relative bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 ${service.title === 'Ad Campaigns' ? 'overflow-hidden' : ''}`}
+              style={service.title === 'Ad Campaigns' ? {
+                backgroundImage: "url('/circleimages.png')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              } : {}}
             >
               {/* Icon */}
               <div className="mb-4 ">
@@ -357,6 +362,127 @@ const ServicesSection = () => {
             </span>
           </div>
         </motion.div> */}
+      </div>
+    </motion.div>
+  );
+};
+
+// Digital Marketing Section Component
+const DigitalMarketingSection = () => {
+  const ref = useRef(null);
+  const navigate = useNavigate();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
+  const handleGetStarted = () => {
+    navigate('/contact');
+  };
+
+  return (
+    <motion.div 
+      ref={ref}
+      style={{ opacity, y }}
+      className="min-h-screen bg-white flex items-center justify-center p-8 will-change-transform"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Header - Exact layout from image */}
+        <div className="mb-16">
+          {/* Top row with tags */}
+          <div className="flex items-center justify-between mb-8">
+            <span className="inline-block bg-gray-800 text-white text-xs font-medium px-4 py-2 rounded-full">
+              Digital Marketing
+            </span>
+            <span className="inline-block bg-gray-300 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">
+              Boost Your Reach
+            </span>
+          </div>
+          
+          {/* Main content row */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <h1 className="font-space-grotesk text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 max-w-2xl leading-tight">
+              Amplify your brand's presence with data-driven marketing strategies.
+            </h1>
+            <h2 className="font-space-grotesk text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
+              Engage, Convert, Grow.
+            </h2>
+          </div>
+        </div>
+
+        {/* Two Cards Grid - Exact positioning */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Social Media Management Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="group relative bg-gray-900 rounded-2xl p-8 overflow-hidden h-80"
+          >
+            {/* Background Pattern - Social Media Icons */}
+            <div className="absolute inset-0 opacity-100">
+              <img src="/social.png" alt="Ad Campaigns Background" className="absolute inset-0 w-full h-full object-cover opacity-90 pointer-events-none" style={{borderRadius: '1rem', zIndex: 1}} />
+            </div>
+            
+            {/* Content */}
+            <div className="relative z-10 h-full flex flex-col justify-between">
+              <div>
+                <h3 className="font-space-grotesk text-2xl font-bold text-white mb-4">
+                  Social Media Management
+                </h3>
+                <p className="text-white/80 text-lg">
+                  Build and engage your audience effectively.
+                </p>
+              </div>
+              <div className="flex justify-end">
+                <button 
+                  onClick={handleGetStarted}
+                  className="inline-flex items-center px-6 py-3 bg-white text-black font-medium rounded-lg transition-all duration-300 hover:scale-105 border border-black"
+                >
+                  Start now →
+                </button>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Ad Campaigns Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="group relative bg-gray-900 rounded-2xl p-8 overflow-hidden h-80"
+            >
+              <div className="absolute inset-0">
+                {/* Circle Images PNG - now above gradient, below content */}
+                <img src="/circleimages.png" alt="Ad Campaigns Background" className="absolute inset-0 w-full h-full object-cover opacity-90 pointer-events-none" style={{borderRadius: '1rem', zIndex: 1}} />
+                
+              </div>
+              {/* Content */}
+              <div className="relative z-10 h-full flex flex-col justify-between">
+                <div>
+                  <h3 className="font-space-grotesk text-2xl font-bold text-white mb-4">
+                    Ad Campaigns
+                  </h3>
+                  <p className="text-white/80 text-lg">
+                    Drive results with targeted advertising.
+                  </p>
+                </div>
+                <div className="flex justify-end">
+                  <button 
+                    onClick={handleGetStarted}
+                    className="inline-flex items-center px-6 py-3 bg-white text-black font-medium rounded-lg transition-all duration-300 hover:scale-105 border border-black"
+                  >
+                    Start now →
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+        </div>
       </div>
     </motion.div>
   );
@@ -433,7 +559,11 @@ export default function Page3ofAgence() {
 
       {/* Services Section */}
       <ServicesSection />
-     
+      
+      {/* Digital Marketing Section */}
+      <DigitalMarketingSection />
+      
+        
 
 
       {/* <TeamCard
