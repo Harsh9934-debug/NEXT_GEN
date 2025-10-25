@@ -95,7 +95,7 @@ const Projects = () => {
             work
           </span>
           <div className="space-y-4">
-            <h2 className="font-[font2] text-5xl leading-[1.05] uppercase sm:text-6xl lg:text-[8vw]">
+            <h2 className="font-space-grotesk text-5xl leading-[1.05] uppercase sm:text-6xl lg:text-[8vw]">
               Projects
             </h2>
             <p className="max-w-xl text-sm text-white/60 sm:text-base md:text-lg">

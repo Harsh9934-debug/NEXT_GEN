@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const HomeBottomText = () => {
   return (
-    <div className='font-[font2] relative flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2 px-4'>
+    <div className='font-space-grotesk relative flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2 px-4'>
       {/* Info text: static on mobile/tablet, absolute on large screens to avoid layout shift */}
       <div className='order-3 sm:order-none w-full sm:w-[28rem] max-w-md text-center sm:text-left mt-4 sm:mt-0 lg:absolute lg:right-20 lg:bottom-72 lg:w-[17vw]'>
-        <p className='font-[font1] text-sm sm:text-base lg:text-lg leading-relaxed text-white/90'>
+        <p className='font-inter text-sm sm:text-base lg:text-lg leading-relaxed text-white/90'>
           At <span className='font-semibold text-[#D3FD50] tracking-wider'>NEXTGEN</span>, we build websites, apps, and content that help your business grow. Clear ideas, honest work, results that last.
         </p>
       </div>

@@ -19,7 +19,7 @@ const ProjectCard = ({ index, title, subtitle, year, services = [], image }) => 
                     </div>
 
                     <div className="space-y-3">
-                        <h3 className="font-[font2] text-3xl uppercase tracking-tight text-white sm:text-4xl lg:text-5xl">
+                        <h3 className="font-space-grotesk text-3xl uppercase tracking-tight text-white sm:text-4xl lg:text-5xl">
                             {title}
                         </h3>
                         <p className="max-w-md text-sm leading-relaxed text-white/70 sm:text-base">
