@@ -142,7 +142,7 @@ const Agence = () => {
                 Welcome to NEXTGEN, where we build living brands and digital products that are not only human, swift, and unmistakably yours but also thrive in today's digital landscape. We're a full-service creative agency dedicated to crafting digital experiences that connect with people and deliver results.  </p>
               <div className='flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em]'>
                 {servicePillars.map(pillar => (
-                  <span key={pillar} className='rounded-full border border-black/10 bg-white px-4 py-2 shadow-sm backdrop-blur transition-colors duration-300  text-black'>
+                  <span key={pillar} className='rounded-full border  brounded-full border border-white/30 bg-transparent px-6 py-3 text-white transition duration-300 hover:border-white/60 hover:bg-white/10'>
                     {pillar}
                   </span>
                 ))}
@@ -150,7 +150,7 @@ const Agence = () => {
               <div className='flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.3em]'>
                 <Link
                   to='/projects'
-                  className='inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg'
+                  className='inline-flex items-center justify-center rounded-full border border-white/30 bg-transparent px-6 py-3 text-white transition duration-300 hover:border-white/60 hover:bg-white/10'
                 >
                   View Projects ↗
                 </Link>
