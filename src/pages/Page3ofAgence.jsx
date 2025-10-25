@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useScroll, useTransform, useSpring, motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const TeamCard = ({
   person,
@@ -158,6 +159,231 @@ const TeamCard = ({
   );
 };
 
+// Services Section Component
+const ServicesSection = () => {
+  const ref = useRef(null);
+  const navigate = useNavigate();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 0.8", "end 0.2"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
+  const handleGetStarted = () => {
+    navigate('/contact');
+  };
+
+  const services = [
+    {
+      title: "Development",
+      tags: ["Build & Optimise"],
+      icon: (
+        <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
+          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        </div>
+      ),
+      services: [
+        "Web Development",
+        "App Development",
+        "Process Automation",
+        "API Integration",
+        "Database Management"
+      ]
+    },
+    {
+      title: "Analytics",
+      tags: ["Data Insights"],
+      icon: (
+        <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
+          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+      ),
+      services: [
+        "Data Analytics",
+        "SEO & Optimisation",
+        "Business Intelligence",
+        "Predictive Analytics",
+        "Data Visualization"
+      ]
+    },
+    {
+      title: "Design",
+      tags: ["Brand Identity"],
+      icon: (
+        <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
+          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+          </svg>
+        </div>
+      ),
+      services: [
+        "Branding & Identity",
+        "UI/UX Design",
+        "Motion Graphics",
+        "Creative Strategy",
+        "Web Design"
+      ]
+    },
+    {
+      title: "Digital Marketing",
+      tags: ["Marketing Strategy"],
+      icon: (
+        <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
+          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+          </svg>
+        </div>
+      ),
+      services: [
+        "Social Media Marketing",
+        "Content Marketing",
+        "Email Marketing",
+        "Search Engine Optimization",
+        "Search Engine Marketing"
+      ]
+    }
+  ];
+
+  return (
+    <motion.div 
+      ref={ref}
+      style={{ opacity, y }}
+      className="min-h-screen bg-white flex items-center justify-center p-8 will-change-transform"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs uppercase tracking-[0.3em] text-gray-600 mb-4"
+          >
+            Services
+          </motion.div>
+          
+          <motion.h1 
+            className="font-space-grotesk text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            expect — and a few things that will wow you.
+          </motion.h1>
+        </div>
+
+        {/* Services Grid - 4 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.08, 
+                ease: "easeOut",
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="group relative bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+            >
+              {/* Icon */}
+              <div className="mb-4 ">
+                {service.icon}
+              </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {service.tags.map((tag, tagIndex) => (
+                  <span 
+                    key={tagIndex}
+                    className="inline-block bg-[#D3FD50] text-black text-xs font-medium px-2.5 py-1 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Title */}
+              <h3 className="font-space-grotesk text-xl font-bold mb-4 text-gray-900">
+                {service.title}
+              </h3>
+
+              {/* Services List */}
+              <ul className="space-y-2 mb-6">
+                {service.services.map((item, itemIndex) => (
+                  <li key={itemIndex} className="flex items-center text-gray-600">
+                    <div className="w-1 h-1 bg-gray-400 rounded-full mr-2.5 flex-shrink-0"></div>
+                    <span className="text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Get Started Button */}
+              <div className="flex justify-end">
+                <button 
+                  onClick={handleGetStarted}
+                  className="inline-flex items-center px-4 py-2 bg-[#D3FD50]  text-gray-900 font-medium rounded-lg transition-all duration-300 hover:scale-105 text-sm cursor-pointer"
+                >
+                  Get Started
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Featured Services Banner */}
+        {/* <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <div className="inline-block bg-[#D3FD50] px-4 py-1.5 rounded-lg">
+            <span className="text-gray-900 font-bold text-xs uppercase tracking-wider">
+              FEATURED SERVICES
+            </span>
+          </div>
+        </motion.div> */}
+      </div>
+    </motion.div>
+  );
+};
+
+// Partners Section Component
+const PartnersSection = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
+  return (
+    <motion.div 
+      ref={ref}
+      style={{ opacity, y }}
+      className="min-h-screen bg-gray-100 flex items-center justify-center p-8"
+    >
+      
+    </motion.div>
+  );
+};
+
 // Enhanced Main Page Component
 export default function Page3ofAgence() {
   const containerRef = useRef(null);
@@ -205,7 +431,12 @@ export default function Page3ofAgence() {
         />
       </div>
 
-      <TeamCard
+      {/* Services Section */}
+      <ServicesSection />
+     
+
+
+      {/* <TeamCard
         person="Harsh Gupta"
         image="/harsh.png"
         badge="Full-stack Developer"
@@ -248,7 +479,7 @@ export default function Page3ofAgence() {
         tags="STRATEGY · PERFORMANCE · STORY"
         description="Connects culture and data to create campaigns that scale authentically. Every project balances creative risk, smart optimization, and a sense of humanity that stands out in the market."
         layoutDirection="row"
-      />
+      /> */}
     </div>
   );
 }
