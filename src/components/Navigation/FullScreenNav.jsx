@@ -145,7 +145,7 @@ const FullScreenNav = () => {
                     </div>
                     <div className='link origin-top relative border-t-1 border-white'>
                         <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>
-                            <a href='#/agence' onClick={() => setNavOpen(false)} className='block cursor-pointer'>Agence</a>
+                            <a href='#/agency' onClick={() => setNavOpen(false)} className='block cursor-pointer'>Agence</a>
                         </h1>
                         <div className='moveLink pointer-events-none absolute text-black flex top-0 bg-[#D3FD50]'>
                             <div className='moveX flex items-center'>
