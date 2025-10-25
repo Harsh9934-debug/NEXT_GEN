@@ -276,7 +276,7 @@ const ServicesSection = () => {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            expect — and a few things that will wow you.
+          See what makes us truly different          
           </motion.h1>
         </div>
 
