@@ -53,33 +53,48 @@ const FullScreenNav = () => {
 
     function gsapAnimation() {
         const tl = gsap.timeline()
-        tl.to('.fullscreennav', { display: 'block' })
+        // ensure visible immediately
+        tl.set('.fullscreennav', { display: 'block' })
+        // quick stair reveal
         tl.to('.stairing', {
-            delay: 0.2,
+            duration: 0.18,
             height: '100%',
-            stagger: { amount: -0.3 }
+            stagger: 0.06,
+            ease: 'power2.out'
         })
+        // bring links in with small overlap
+        tl.set('.link', { opacity: 0, rotateX: 90 })
         tl.to('.link', {
+            duration: 0.14,
             opacity: 1,
             rotateX: 0,
-            stagger: { amount: 0.3 }
-        })
-        tl.to('.navlink', { opacity: 1 })
+            stagger: 0.06,
+            ease: 'power2.out'
+        }, '-=0.08')
+        // navlink (logo/close) fade
+        tl.to('.navlink', { duration: 0.1, opacity: 1 }, '-=0.06')
     }
 
     function gsapAnimationReverse() {
         const tl = gsap.timeline()
+        // hide links quickly
         tl.to('.link', {
+            duration: 0.12,
             opacity: 0,
             rotateX: 90,
-            stagger: { amount: 0.1 }
+            stagger: 0.04,
+            ease: 'power2.in'
         })
+        // collapse stairs
         tl.to('.stairing', {
+            duration: 0.14,
             height: 0,
-            stagger: { amount: 0.1 }
-        })
-        tl.to('.navlink', { opacity: 0 })
-        tl.to('.fullscreennav', { display: 'none' })
+            stagger: 0.05,
+            ease: 'power2.in'
+        }, '-=0.06')
+        // hide navlink then remove from flow
+        tl.to('.navlink', { duration: 0.08, opacity: 0 }, '-=0.06')
+        tl.set('.fullscreennav', { display: 'none' })
     }
 
     useGSAP(() => {
