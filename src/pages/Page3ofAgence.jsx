@@ -323,6 +323,7 @@ const ServicesSection = () => {
               {/* Title */}
               <h3 className="font-space-grotesk text-xl font-bold mb-4 text-gray-900">
                 {service.title}
+                
               </h3>
 
               {/* Services List */}
