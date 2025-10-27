@@ -136,7 +136,7 @@ const Agence = () => {
 
           <div className='mt-12 grid gap-16 lg:grid-cols-[minmax(0,1fr)_280px]'>
             <div className='flex flex-col gap-8 max-w-3xl'>
-              <h3 className='text-4xl md:text-6xl lg:text-6xl font-bold leading-tight tracking-[-0.02em]'>
+              <h3 className='font-space-grotesk text-4xl md:text-6xl lg:text-6xl font-bold leading-tight tracking-[-0.02em]'>
               We don't just build digital assets, we create unforgettable human experiences. </h3>
               <p className='text-lg leading-relaxed text-white/80'>
                 Welcome to NEXTGEN, where we build living brands and digital products that are not only human, swift, and unmistakably yours but also thrive in today's digital landscape. We're a full-service creative agency dedicated to crafting digital experiences that connect with people and deliver results.  </p>
@@ -172,7 +172,7 @@ const Agence = () => {
         <div className='mx-auto flex max-w-5xl flex-col items-center gap-10 rounded-[36px] border border-black/10 bg-[#0f0f0f] px-6 py-16 text-white shadow-2xl sm:px-12'>
           <div className='text-center'>
             <span className='text-[11px] uppercase tracking-[0.45em] text-white/50'>Collaboration model</span>
-            <h2 className='mt-6 text-3xl md:text-5xl font-bold leading-tight'>
+            <h2 className='font-space-grotesk mt-6 text-3xl md:text-5xl font-bold leading-tight'>
               Momentum comes from shared ownership.
             </h2>
             <p className='mt-4 text-lg leading-relaxed text-white/70'>
