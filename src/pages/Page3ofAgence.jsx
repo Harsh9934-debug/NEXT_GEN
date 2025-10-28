@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useScroll, useTransform, useSpring, motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
-import Footer2 from './footer2';
+// import Footer2 from './footer2';
 
 const TeamCard = ({
   person,
@@ -564,7 +564,7 @@ export default function Page3ofAgence() {
       {/* Digital Marketing Section */}
       <DigitalMarketingSection />
 
-      <Footer2/>
+      {/* <Footer2/> */}
       
         
 
