@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import ProjectCard from '../components/projects/ProjectCard'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import Footer2 from './Footer2'
+import Footer2 from './footer2.jsx'
 // Using public path for images referenced directly in data. If bundling is preferred, move to /src/assets.
 
 

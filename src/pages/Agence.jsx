@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Page3ofAgence from './Page3ofAgence';
-import Footer2 from './Footer2'
+import Footer2 from './footer2.jsx'
 // Register GSAP plugins once at the top level
 gsap.registerPlugin(ScrollTrigger);
 
@@ -212,7 +212,7 @@ const Agence = () => {
       <Page3ofAgence />
 
       {/* Footer Section */}
-      <Footer2 />
+       <Footer2 />
     </div>
     
   );
