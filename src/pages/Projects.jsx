@@ -3,6 +3,8 @@ import { useMemo } from 'react'
 import ProjectCard from '../components/projects/ProjectCard'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
+import Footer from './Footer';
+
 
 
 const Projects = () => {
@@ -132,6 +134,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </section>
     
   )
