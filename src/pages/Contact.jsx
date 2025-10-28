@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Footer from './footer2';
 const Contact = () => {
   return (
     <div className="relative min-h-screen bg-black text-white">
@@ -38,6 +38,7 @@ const Contact = () => {
           </aside>
         </div>
       </section>
+        {/* <Footer /> */}
     </div>
   );
 }
