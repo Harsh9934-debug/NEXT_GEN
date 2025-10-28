@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useScroll, useTransform, useSpring, motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
-import Footer from './footer';
+import Footer from './Footer';
 
 const TeamCard = ({
   person,
