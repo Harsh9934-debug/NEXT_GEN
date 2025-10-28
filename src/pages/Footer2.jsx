@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
-const footer2 = () => {
+const Footer2 = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -51,7 +51,7 @@ const footer2 = () => {
   );
 };
 
-export default footer2;
+export default Footer2;
 
 const LinePath = ({
   className,
