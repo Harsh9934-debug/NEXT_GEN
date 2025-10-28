@@ -16,7 +16,7 @@ const Projects = () => {
       subtitle: 'We built an online store that makes refills and shopping simple for everyone.',
       year: '2025',
       services: ['E-commerce', 'Service Design'],
-      image: 'https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg'
+      image: 'p1.png'
     },
     {
       id: 'DEV_AI',
@@ -32,7 +32,7 @@ const Projects = () => {
       subtitle: 'We launched a stand-up electric snowmobile and got it in front of riders fast.',
       year: '2025',
       services: ['Launch Strategy', 'Product Film'],
-      image: 'https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---Thumbnail-1280x960.jpg'
+      image: 'p3.png'
     },
     {
       id: 'sweetbite-desserts',
@@ -40,7 +40,7 @@ const Projects = () => {
       subtitle: 'We refreshed a classic dessert brand with a warm, modern look and story.',
       year: '2025',
       services: ['Brand Story', 'Content'],
-      image: 'https://k72.ca/uploads/caseStudies/OKA/OKA_thumbnail-1280x960.jpg'
+      image: 'p4.png'
     },
     {
       id: 'opto-modular-retail',
@@ -48,7 +48,7 @@ const Projects = () => {
       subtitle: 'We designed a flexible retail setup that changes with seasons and store sizes.',
       year: '2024',
       services: ['Spatial Design', '3D Interactive'],
-      image: 'https://k72.ca/uploads/caseStudies/Opto/thumbnailimage_opto-1280x960.jpg'
+      image: 'p5.png'
     },
     {
       id: 'cinematic-sound-brand',
@@ -56,7 +56,7 @@ const Projects = () => {
       subtitle: 'We turned film sound into a brand people can see and feel.',
       year: '2024',
       services: ['Sound Branding', 'Experiential'],
-      image: 'https://k72.ca/uploads/caseStudies/LAMAJEURE_-_Son_sur_mesure/chalaxeur-thumbnail_img-1280x960.jpg'
+      image: 'p6.png'
     },
     {
       id: 'shelton-spirits',
@@ -64,7 +64,7 @@ const Projects = () => {
       subtitle: 'We created packaging and visuals that feel premium and collectible.',
       year: '2024',
       services: ['Brand System', 'Packaging'],
-      image: 'https://k72.ca/uploads/caseStudies/SHELTON/thumbnailimage_shelton-1280x960.jpg'
+      image: 'p7.png'
     }
   ]), [])
 
@@ -123,16 +123,7 @@ const Projects = () => {
 
           <div className="mt-6 space-y-2">
             <span className="text-[0.6rem] uppercase tracking-[0.4em] text-white/40">Featured engagements</span>
-            <div className="flex flex-wrap gap-2">
-              {projects.map((project) => (
-                <span
-                  key={`badge-${project.id}`}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/70"
-                >
-                  {project.title}
-                </span>
-              ))}
-            </div>
+            
           </div>
         </header>
 
