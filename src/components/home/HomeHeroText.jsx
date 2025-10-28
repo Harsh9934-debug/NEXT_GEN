@@ -13,7 +13,7 @@ const HomeHeroText = () => {
                 of
             </div>
             <div className='lg:text-[9.5vw] text-[12vw] justify-center flex items-center uppercase lg:leading-[8vw] leading-[10vw]'>
-                <span className=''>imagination</span>
+                <span >imagination</span>
             </div>
         </div>
     )
