@@ -16,7 +16,7 @@ const Footer2 = () => {
   return (
     <section
       ref={ref}
-      className="font-space-grotesk mx-auto flex h-[350vh] w-screen flex-col items-center overflow-hidden bg-[#FAFDEE] px-4 text-black cursor-pointer"
+      className="font-space-grotesk mx-auto flex h-[350vh] w-screen flex-col items-center overflow-hidden bg-white px-4 text-black cursor-pointer"
       onClick={handleClick}
     >
       <div className="mt-42 relative flex w-fit flex-col items-center justify-center gap-5 text-center">

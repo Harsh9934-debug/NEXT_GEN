@@ -422,7 +422,7 @@ const DigitalMarketingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, margin: "-50px" }}
-            className="group relative bg-gray-900 rounded-2xl p-8 overflow-hidden h-80"
+            className="group relative rounded-2xl p-8 overflow-hidden h-80"
           >
             {/* Background Pattern - Social Media Icons */}
             <div className="absolute inset-0 opacity-100">
@@ -524,13 +524,12 @@ export default function Page3ofAgence() {
 
   return (
     <div className="relative" ref={containerRef}>
-      {/* Animated Progress Bar */}
+      {/* REMOVE animated progress bar and background glow */}
+      {/* 
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 origin-left z-50"
         style={{ scaleX }}
       />
-      
-      {/* Background Glow Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full blur-3xl opacity-20"
@@ -557,18 +556,12 @@ export default function Page3ofAgence() {
           }}
         />
       </div>
-
+      */}
       {/* Services Section */}
       <ServicesSection />
-      
       {/* Digital Marketing Section */}
       <DigitalMarketingSection />
-
       <Footer/>
-      
-        
-
-
       {/* <TeamCard
         person="Harsh Gupta"
         image="/harsh.png"
