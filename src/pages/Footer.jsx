@@ -1,17 +1,23 @@
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Footer2 = () => {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll({
     target: ref,
   });
 
+  const handleClick = () => {
+    navigate('/contact');
+  };
+
   return (
     <section
       ref={ref}
-      className=" font-space-grotesk mx-auto flex h-[350vh] w-screen flex-col items-center overflow-hidden bg-[#FAFDEE] px-4 text-black"
+      className="font-space-grotesk mx-auto flex h-[350vh] w-screen flex-col items-center overflow-hidden bg-[#FAFDEE] px-4 text-black cursor-pointer"
+      onClick={handleClick}
     >
       <div className="mt-42 relative flex w-fit flex-col items-center justify-center gap-5 text-center">
         <h1 className="font-jakarta-sans relative z-10 text-7xl font-medium tracking-[-0.08em] lg:text-9xl">
@@ -27,10 +33,10 @@ const Footer2 = () => {
       </div>
 
       <div className="rounded-4xl font-jakarta-sans w-full translate-y-[200vh] bg-black pb-10 text-[#FAFDEE]">
-        <h1 className="mt-10 text-center text-[15.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[16.6vw]">
-          nextgen.tech
+        <h1 className="mt-10 text-center text-[7.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[8.2vw]">
+          nextgenagent.vercel.app
         </h1>
-        <div className="mt-80 flex w-full flex-col items-start gap-5 px-4 font-medium lg:mt-0 lg:flex-row lg:justify-between">
+        <div className="mt-90 flex w-full flex-col items-start gap-5 px-4 font-medium lg:mt-0 lg:flex-row lg:justify-between">
           <div className="flex w-full items-center justify-between gap-12 uppercase lg:w-fit lg:justify-center">
             <p className="w-fit text-sm">
               Banglore, india <br />
@@ -38,13 +44,17 @@ const Footer2 = () => {
             </p>
             
           </div>
-          <div className="flex w-full flex-wrap items-center justify-between gap-12 uppercase lg:w-fit lg:justify-center">
+          <div className="flex mt-20 w-full flex-wrap items-center justify-between gap-12 uppercase lg:w-fit lg:justify-center">
             <p className="w-fit text-sm">
               Development <br /> Marketing  <br /> Design
             </p>
-            
           </div>
         </div>
+        <div className="flex w-full flex-wrap items-center justify-between gap-12 lg:w-fit lg:justify-center">
+            <p className="w-fit text-sm">
+              mail: harshkumargupta630@gmail.com <br />
+            </p>
+          </div>
       </div>
     </section>
   );
