@@ -32,29 +32,28 @@ const Footer2 = () => {
         />
       </div>
 
-      <div className="rounded-4xl font-jakarta-sans w-full translate-y-[200vh] bg-black pb-10 text-[#FAFDEE]">
+      <div className="rounded-4xl font-jakarta-sans w-full translate-y-[220vh] bg-black pb-10 text-[#FAFDEE]">
         <h1 className="mt-10 text-center text-[7.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[8.2vw]">
           nextgenagent.vercel.app
         </h1>
-        <div className="mt-90 flex w-full flex-col items-start gap-5 px-4 font-medium lg:mt-0 lg:flex-row lg:justify-between">
-          <div className="flex w-full items-center justify-between gap-12 uppercase lg:w-fit lg:justify-center">
+        <div className="flex flex-col gap-6 px-4 font-medium w-full mt-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="uppercase">
             <p className="w-fit text-sm">
               Banglore, india <br />
               and online
             </p>
-            
           </div>
-          <div className="flex mt-20 w-full flex-wrap items-center justify-between gap-12 uppercase lg:w-fit lg:justify-center">
+          <div className="uppercase">
             <p className="w-fit text-sm">
               Development <br /> Marketing  <br /> Design
             </p>
           </div>
-        </div>
-        <div className="flex w-full flex-wrap items-center justify-between gap-12 lg:w-fit lg:justify-center">
+          <div>
             <p className="w-fit text-sm">
               mail: harshkumargupta630@gmail.com <br />
             </p>
           </div>
+        </div>
       </div>
     </section>
   );
