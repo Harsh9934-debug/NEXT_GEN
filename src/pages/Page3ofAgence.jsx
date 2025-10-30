@@ -519,6 +519,8 @@ export default function Page3ofAgence() {
     offset: ["start start", "end end"]
   });
 
+  
+
   // Progress bar animation
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
