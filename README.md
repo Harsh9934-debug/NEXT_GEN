@@ -1,8 +1,54 @@
-# React + Vite
+# NEXTGEN Company Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React + Vite project for the NEXTGEN agency portfolio.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡️ **Vite** for fast development and builds
+- ⚛️ **React** with HMR
+- 🎨 **Tailwind CSS** for utility-first styling
+- 🌀 **GSAP** for advanced scroll and animation effects
+- 🏃 **Framer Motion** for smooth UI transitions
+- 🧩 **shadcn/ui** for accessible, customizable UI components
+- 📁 **Import alias**: use `@/` for `src/` imports (see `tsconfig.json` and `vite.config.js`)
+- 📄 **ESLint** for code quality
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+## Project Structure
+
+- `src/pages/` — Main pages (Home, Agence, Projects, etc.)
+- `src/components/` — Reusable UI components
+- `src/assets/` — Images and static files
+
+## Alias Setup
+
+- `@/` points to `src/` (configured in `tsconfig.json` and `vite.config.js`)
+
+## Custom Animations
+
+- GSAP and Framer Motion are used for scroll-based and interactive animations.
+- See `src/pages/Agence.jsx` and `src/pages/Page3ofAgence.jsx` for examples.
+
+## UI Components
+
+- shadcn/ui components can be added via CLI (`npx shadcn add ...`)
+- See [shadcn/ui docs](https://ui.shadcn.com/docs/installation/vite) for usage.
+
+## Deployment
+
+- Ready for Vercel or Netlify static hosting.
+
+
+## Author
+
+Harsh kumar Gupta
+
+## Live Demo
+
+[https://nextgenagent.vercel.app/](https://nextgenagent.vercel.app/)
