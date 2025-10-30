@@ -16,6 +16,9 @@ A modern React + Vite project for the NEXTGEN agency portfolio.
 ## Getting Started
 
 ```bash
+# Clone and run locally
+git clone <YOUR REPO URL>
+cd nextgen
 npm install
 npm run dev
 ```
