@@ -36,11 +36,18 @@ const useLoop = (delay = 2000) => {
 
 const Team = () => {
   const gallery = useRef(null);
+  const mobileGallery = useRef(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [isMobile, setIsMobile] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: gallery,
     offset: ["start end", "end start"],
+  });
+
+  const { scrollYProgress: mobileScrollProgress } = useScroll({
+    target: mobileGallery,
+    offset: ["start start", "end end"],
   });
 
   const { height } = dimension;
@@ -52,6 +59,7 @@ const Team = () => {
   useEffect(() => {
     const resize = () => {
       setDimension({ width: window.innerWidth, height: window.innerHeight });
+      setIsMobile(window.innerWidth < 768);
     };
 
     window.addEventListener("resize", resize);
@@ -87,6 +95,7 @@ const Team = () => {
       "Our Creative Minds",
       "The Dream Team",
       "Our Talented Crew",
+
       "The NEXTGEN Family",
     ],
     [],
@@ -123,14 +132,35 @@ const Team = () => {
         </div>
       </div>
 
+      {/* Desktop Gallery - Parallax Columns */}
       <div
         ref={gallery}
-        className="relative box-border flex h-[175vh] gap-[2vw] overflow-hidden bg-white p-[2vw]"
+        className="relative box-border md:flex hidden h-[175vh] gap-[2vw] overflow-hidden bg-white p-[2vw]"
       >
         <Column images={[images[0], images[1], images[2]]} y={y} />
-        <Column images={[images[3], images[4], images[5]]} y={y2} />
-        <Column images={[images[6], images[7], images[8]]} y={y3} />
-        <Column images={[images[9], images[10], images[11]]} y={y4} />
+        <Column images={[images[3], images[4], images[0]]} y={y2} />
+        <Column images={[images[1], images[2], images[3]]} y={y3} />
+        <Column images={[images[4], images[0], images[1]]} y={y4} />
+      </div>
+
+      {/* Mobile Gallery - Sticky Cards */}
+      <div
+        ref={mobileGallery}
+        className="relative md:hidden flex w-full flex-col items-center justify-center pb-[50vh] pt-[20vh] bg-white"
+      >
+        {images.slice(0, 5).map((src, i) => {
+          const targetScale = Math.max(0.7, 1 - (images.length - i - 1) * 0.1);
+          return (
+            <StickyCard
+              key={`mobile_${i}`}
+              i={i}
+              src={src}
+              progress={mobileScrollProgress}
+              range={[i * 0.15, 1]}
+              targetScale={targetScale}
+            />
+          );
+        })}
       </div>
 
       {/* Contact Section */}
@@ -176,6 +206,25 @@ const Team = () => {
         </div>
       </div>
     </main>
+  );
+};
+
+const StickyCard = ({ i, src, progress, range, targetScale }) => {
+  const container = useRef(null);
+  const scale = useTransform(progress, range, [1, targetScale]);
+
+  return (
+    <div ref={container} className="sticky top-0 flex items-center justify-center">
+      <motion.div
+        style={{
+          scale,
+          top: `calc(-5vh + ${i * 25 + 100}px)`,
+        }}
+        className="relative origin-top flex h-[400px] w-[90vw] max-w-[350px] overflow-hidden rounded-2xl"
+      >
+        <img src={src} alt={`Team member ${i + 1}`} className="h-full w-full object-cover" />
+      </motion.div>
+    </div>
   );
 };
 
