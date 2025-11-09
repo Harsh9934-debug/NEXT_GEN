@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Agence from './pages/Agence'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import Team from './pages/Team'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
 import ScrollToTop from './components/common/ScrollToTop'
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/agency' element={<Agence />} />
         <Route path='/projects' element={<Projects />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/team' element={<Team />} />
       </Routes>
     </div>
   )
