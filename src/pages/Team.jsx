@@ -70,7 +70,7 @@ const Team = () => {
       "Let's build together",
       "Start your project",
       "Get in touch today",
-      "Create something amazing",
+      
     ],
     [],
   );
@@ -100,7 +100,7 @@ const Team = () => {
     <main className="w-full bg-[#eee] text-black" style={{ scrollBehavior: 'smooth' }}>
       <div className="font-space-grotesk flex h-screen items-center justify-center gap-2">
         <div className="absolute left-1/2 top-[10%] grid -translate-x-1/2 content-start justify-items-center gap-6 text-center text-black">
-          <div className="h-30 md:h-32 flex items-center justify-center overflow-hidden w-full px-4">
+          <div className="h-20 sm:h-24 md:h-32 flex items-center justify-center overflow-hidden w-full px-4">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={teamKey}
@@ -108,7 +108,7 @@ const Team = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "-100%" }}
                 transition={{ duration: 0.2 }}
-                className="text-7xl sm:text-5xl md:text-7xl font-bold uppercase"
+                className="text-2xl sm:text-5xl md:text-7xl font-bold uppercase"
               >
                 {currentTeamMessage}
               </motion.h1>
