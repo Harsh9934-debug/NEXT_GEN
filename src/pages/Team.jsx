@@ -4,14 +4,14 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 
 const images = [
-  "/kundan3.png",
-  "/arun2.png",
-  "/mayank.png",
-  "/mayuresh3.png",
   "/harsh.png",
+  "/arun2.png",
+  "/mayuresh3.png",
+  "/mayank.png",
   "/kundan3.png",
   "/arun2.png",
   "/mayank.png",
+  "/kundan3.png",
   "/arun2.png",
   "/mayuresh3.png",
   "/harsh.png",
