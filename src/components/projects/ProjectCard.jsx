@@ -40,7 +40,7 @@ const ProjectCard = ({ index, title, subtitle, year, services = [], image }) => 
                         </span>
                     ))}
                 </div>
-                <button className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white transition-colors hover:border-white/40 hover:bg-white/10">
+                {/* <button className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white transition-colors hover:border-white/40 hover:bg-white/10">
                     View project
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ const ProjectCard = ({ index, title, subtitle, year, services = [], image }) => 
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
                     </svg>
-                </button>
+                </button> */}
             </div>
         </article>
     )
