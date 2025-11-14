@@ -138,7 +138,7 @@ const FullScreenNav = () => {
                         <div className='lg:h-44 h-28 lg:w-1 w-0.5 right-0 rotate-45 origin-top absolute bg-[#D3FD50]'></div>
                     </button>
                 </div>
-                <div className='py-36 overflow-y-auto max-h-[calc(100vh-200px)]'>
+                <div className='py-36 overflow-x-hidden'>
                     <div className='link origin-top relative border-t-1 border-white'>
                         <h1 className='font-space-grotesk text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>
                             <a href='#/projects' onClick={() => setNavOpen(false)} className='block cursor-pointer'>Projects</a>
@@ -208,7 +208,7 @@ const FullScreenNav = () => {
                                 <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src='https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg' alt='' />
                             </div>
                             <div className='moveX flex items-center'>
-                                <h2 className='whitespace-nowrap font-space-grotesk lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>Our Creative Team</h2>
+                                <h2 className='whitespace-nowrap font-space-grotesk lg:text-[8vw] text-5xl  text-center lg:leading-[0.12] lg:pt-10 pt-4 uppercase'>Our Creative Team</h2>
                                 <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src='https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg' alt='' />
                                 <h2 className='whitespace-nowrap font-space-grotesk lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>Meet The Creators</h2>
                                 <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src='https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg' alt='' />
