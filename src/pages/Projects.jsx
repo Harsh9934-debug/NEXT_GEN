@@ -122,9 +122,11 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="mt-6 space-y-2">
-            <span className="text-[0.6rem] uppercase tracking-[0.4em] text-white/40">Featured engagements</span>
-            
+          <div className="pt-4">
+            <div className="inline-flex items-center gap-2">
+              <div className="h-1.5 w-1.5 rounded-full bg-[#D3FD50]"></div>
+              <span className="text-[0.65rem] uppercase tracking-[0.35em] text-white/50">Featured Engagements</span>
+            </div>
           </div>
         </header>
 
