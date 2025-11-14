@@ -21,7 +21,7 @@ const Contact = () => {
             <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
               <h3 className="text-lg font-semibold">Reach us</h3>
               <div className="mt-4 space-y-2 text-white/80">
-                <p>harshkumargupta630@gmail.com</p>
+                <p>nextgenservicesinformation@gmail.com</p>
               </div>
             </div>
 
