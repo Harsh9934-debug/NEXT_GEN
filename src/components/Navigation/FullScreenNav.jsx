@@ -196,7 +196,7 @@ const FullScreenNav = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='link origin-top relative border-t-1 border-white'>
+                    {/* <div className='link origin-top relative border-t-1 border-white'>
                         <h1 className='font-space-grotesk text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>
                             <a href='#/team' onClick={() => setNavOpen(false)} className='block cursor-pointer'>Team</a>
                         </h1>
@@ -214,7 +214,7 @@ const FullScreenNav = () => {
                                 <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src='https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg' alt='' />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
