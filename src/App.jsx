@@ -7,22 +7,26 @@ import Team from './pages/Team'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
 import ScrollToTop from './components/common/ScrollToTop'
-
+import NoiseOverlay from './components/common/NoiseOverlay'
+import { ReactLenis } from 'lenis/react'
 
 const App = () => {
   return (
-    <div className='overflow-x-hidden'>
-      <Navbar />
-      <FullScreenNav />
-      <ScrollToTop />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/agency' element={<Agence />} />
-        <Route path='/projects' element={<Projects />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/team' element={<Team />} />
-      </Routes>
-    </div>
+    <ReactLenis root>
+      <div className='overflow-x-hidden'>
+        <NoiseOverlay />
+        <Navbar />
+        <FullScreenNav />
+        <ScrollToTop />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/agency' element={<Agence />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/team' element={<Team />} />
+        </Routes>
+      </div>
+    </ReactLenis>
   )
 }
 

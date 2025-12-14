@@ -1,42 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import FooterCTA from '../components/home/FooterCTA';
+
 const Contact = () => {
+
+
   return (
-    <div className="relative min-h-screen bg-black text-white">
-      {/* Hero */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pt-28 pb-12">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
-            Let's build something great
-          </h1>
-          <p className="mt-4 text-white/70 text-lg max-w-2xl">
-            Tell us a bit about your project. We’ll reach back within 1–2 business days.
-          </p>
+    <div className="min-h-screen bg-black text-white pt-24">
+      <section className="relative px-6 py-12 sm:px-12 lg:px-20 lg:py-24">
+        {/* Centered Contact Info */}
+        <div className="flex flex-col items-center justify-center text-center mx-auto max-w-4xl">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mb-8 block font-space-grotesk text-sm font-bold uppercase tracking-widest text-[#D3FD50]"
+          >
+            Contact Us
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="font-space-grotesk text-5xl font-bold uppercase leading-[0.9] tracking-tighter sm:text-7xl lg:text-8xl"
+          >
+            Let's Start <br />
+            <span className="text-white/50">A Project.</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="mt-8 max-w-xl text-lg text-white/60 mx-auto"
+          >
+            We help ambitious brands build the future. Tell us about your vision.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="mt-16 flex flex-col items-center gap-12 sm:flex-row sm:gap-24"
+          >
+            <div className="text-center">
+              <h4 className="mb-4 font-space-grotesk text-xs font-bold uppercase tracking-widest text-white/40">Email</h4>
+              <a href="mailto:harshkumargupta630@gmail.com" className="text-2xl sm:text-3xl decoration-[#D3FD50] hover:underline hover:underline-offset-8 transition-all">
+                harshkumargupta630@gmail.com
+              </a>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+            className="mt-12 text-center"
+          >
+            <h4 className="mb-4 font-space-grotesk text-xs font-bold uppercase tracking-widest text-white/40">Location</h4>
+            <p className="text-xl sm:text-2xl">Bangalore, IN / Remote</p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Content */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pb-24">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
-          <aside className="lg:col-span-1 space-y-6">
-            <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-              <h3 className="text-lg font-semibold">Reach us</h3>
-              <div className="mt-4 space-y-2 text-white/80">
-                <p>nextgenservicesinformation@gmail.com</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-              <h3 className="text-lg font-semibold">Location</h3>
-              <div className="mt-4 space-y-2 text-white/80">
-                <p>Banglore, IN</p>
-                <p>Remote-first</p>
-              </div>
-            </div>
-
-            
-          </aside>
-        </div>
-      </section>
+      <FooterCTA />
     </div>
   );
 }

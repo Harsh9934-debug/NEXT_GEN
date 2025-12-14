@@ -8,14 +8,14 @@ const Navbar = () => {
 
     const location = useLocation()
     const navGreenRef = useRef(null)
-    const [navOpen,setNavOpen] = useContext(NavbarContext)
+    const [navOpen, setNavOpen] = useContext(NavbarContext)
     const [navColor, setNavColor] = useContext(NavbarColorContext)
 
     const isAgence = location.pathname === '/agence'
     const isProjects = location.pathname === '/projects'
 
     return (
-        <div className='z-4 flex fixed top-0 w-full  items-start justify-between'>
+        <div className='z-50 flex fixed top-0 w-full  items-start justify-between'>
             <div className='lg:p-8 p-2 '>
                 <a href="#/" className='inline-block h-8 lg:h-10 group cursor-pointer'>
                     <img
@@ -25,7 +25,7 @@ const Navbar = () => {
                     />
                 </a>
             </div>
-            <div onClick={()=>{
+            <div onClick={() => {
                 setNavOpen(true)
             }} onMouseEnter={() => {
                 navGreenRef.current.style.height = '100%'
