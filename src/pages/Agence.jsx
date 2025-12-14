@@ -1,7 +1,7 @@
-import { useRef } from 'react';
+import { useRef, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Page3ofAgence from './Page3ofAgence';
+const Page3ofAgence = lazy(() => import('./Page3ofAgence'));
 
 const Agence = () => {
   const containerRef = useRef(null);
@@ -150,7 +150,9 @@ const Agence = () => {
 
 
       {/* Page 3 of Agence - Services etc */}
-      <Page3ofAgence />
+      <Suspense fallback={<div className="min-h-screen bg-black" />}>
+        <Page3ofAgence />
+      </Suspense>
 
     </div>
 

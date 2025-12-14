@@ -198,7 +198,13 @@ const DigitalMarketingSection = () => {
           >
             {/* Background Image/Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
-            <img src="/social.png" alt="Social Media" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 blur-[2px] group-hover:blur-0" />
+            <img
+              src="/social.png"
+              alt="Social Media"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 blur-[2px] group-hover:blur-0"
+            />
 
             <div className="relative z-20">
               <h3 className="font-space-grotesk text-3xl font-bold text-white mb-4">
@@ -225,7 +231,13 @@ const DigitalMarketingSection = () => {
             className="group relative rounded-3xl p-10 overflow-hidden min-h-[400px] flex flex-col justify-end border border-white/10 bg-[#0F0F0F]"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <img src="/circleimages.png" alt="Ad Campaigns" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
+            <img
+              src="/circleimages.png"
+              alt="Ad Campaigns"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-700"
+            />
 
             <div className="relative z-20">
               <h3 className="font-space-grotesk text-3xl font-bold text-white mb-4">
