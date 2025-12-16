@@ -153,10 +153,19 @@ const FooterCTA = () => {
                     <motion.div variants={itemVariants} className="flex flex-col gap-6 md:col-span-1 lg:col-span-3">
                         <h4 className="font-space-grotesk text-sm font-bold uppercase text-white">Socials</h4>
                         <ul className="flex flex-col gap-4 text-sm text-white/50">
-                            {['Instagram', 'Twitter', 'LinkedIn', 'Behance'].map((social) => (
-                                <li key={social}>
-                                    <a href="#" className="group flex items-center gap-1 hover:text-[#D3FD50] transition-colors">
-                                        {social} <ArrowUpRight size={12} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                            {[
+                                { name: 'Instagram', url: 'https://www.instagram.com/next.gen892?igsh=bml4ZGhnc28zNHRu' },
+                                { name: 'Twitter', url: 'https://x.com/Harshkumar10099' },
+                                { name: 'LinkedIn', url: 'https://www.linkedin.com/company/nextgenagencey/' },
+                            ].map((social) => (
+                                <li key={social.name}>
+                                    <a
+                                        href={social.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group flex items-center gap-1 hover:text-[#D3FD50] transition-colors"
+                                    >
+                                        {social.name} <ArrowUpRight size={12} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                     </a>
                                 </li>
                             ))}
