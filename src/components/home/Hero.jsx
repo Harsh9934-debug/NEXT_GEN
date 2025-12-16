@@ -57,7 +57,7 @@ const Hero = () => {
                         className="mt-12 flex items-center gap-6"
                     >
                         <MagneticButton>
-                            <a href="/projects" className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white/20 bg-white/5 px-8 py-4 backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/10">
+                            <a href="/#/projects" className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white/20 bg-white/5 px-8 py-4 backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/10">
                                 <span className="mr-2 text-sm font-bold uppercase tracking-widest text-white">Explore Our Work</span>
                                 <ArrowUpRight size={16} className="text-[#D3FD50] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </a>
