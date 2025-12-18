@@ -92,7 +92,7 @@ const Agence = () => {
                   View Projects ↗
                 </Link>
                 <a
-                  href='mailto:harshkumargupta630@gmail.com'
+                  href='mailto:nextgenservicesinformations@gmail.com'
                   className='inline-flex items-center justify-center px-8 py-4 rounded-full border border-white/20 text-white font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300'
                 >
                   Start a project

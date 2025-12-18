@@ -191,7 +191,7 @@ const Team = () => {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <a
-              href="mailto:nextgenservicesinformation@gmail.com"
+              href="mailto:nextgenservicesinformations@gmail.com"
               className="inline-flex items-center justify-center rounded-full bg-black px-8 py-4 text-white font-medium transition-transform duration-300 hover:scale-105"
             >
               Send us an email

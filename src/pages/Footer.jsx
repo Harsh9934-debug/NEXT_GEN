@@ -50,7 +50,7 @@ const Footer2 = () => {
           </div>
           <div>
             <p className="w-fit text-sm">
-              mail: nextgenservicesinformation@gmail.com <br />
+              mailto:nextgenservicesinformations@gmail.com <br />
             </p>
           </div>
         </div>

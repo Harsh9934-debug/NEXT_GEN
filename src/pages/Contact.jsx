@@ -44,7 +44,7 @@ const Contact = () => {
           >
             <div className="text-center">
               <h4 className="mb-4 font-space-grotesk text-xs font-bold uppercase tracking-widest text-white/40">Email</h4>
-              <a href="mailto:harshkumargupta630@gmail.com" className="text-2xl sm:text-3xl decoration-[#D3FD50] hover:underline hover:underline-offset-8 transition-all">
+              <a href="mailto:nextgenservicesinformations@gmail.com" className="text-2xl sm:text-3xl decoration-[#D3FD50] hover:underline hover:underline-offset-8 transition-all">
                 harshkumargupta630@gmail.com
               </a>
             </div>

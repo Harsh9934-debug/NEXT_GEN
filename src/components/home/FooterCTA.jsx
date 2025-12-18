@@ -98,7 +98,7 @@ const FooterCTA = () => {
                 >
                     <motion.div variants={itemVariants}>
                         <MagneticButton>
-                            <a href="mailto:harshkumargupta630@gmail.com" className="group relative block cursor-pointer">
+                            <a href="mailto:nextgenservicesinformations@gmail.com" className="group relative block cursor-pointer">
                                 <div className="inline-flex items-center gap-4 rounded-full border border-white/20 bg-white/5 px-8 py-3 text-sm font-bold uppercase tracking-widest backdrop-blur-sm transition-colors hover:bg-white hover:text-black">
                                     Book a 30-Min Call <ArrowUpRight size={16} />
                                 </div>
