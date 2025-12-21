@@ -4,6 +4,8 @@ import Agence from './pages/Agence'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Team from './pages/Team'
+import AboutUs from './pages/AboutUs'
+import Pricing from './pages/Pricing'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
 import ScrollToTop from './components/common/ScrollToTop'
@@ -24,6 +26,9 @@ const App = () => {
           <Route path='/projects' element={<Projects />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/team' element={<Team />} />
+          <Route path='/about-us' element={<AboutUs />} />
+          <Route path='/pricing' element={<Pricing />} />
+          <Route path='/contact-us' element={<Contact />} />
         </Routes>
       </div>
     </ReactLenis>

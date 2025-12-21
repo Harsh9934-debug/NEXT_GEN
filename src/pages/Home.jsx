@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Hero from '../components/home/Hero';
 import ServicesTicker from '../components/home/ServicesTicker';
 import Mockit from '../components/home/Mockit';
+import WhyWorkWithUs from '../components/home/WhyWorkWithUs';
 import AgencyIntro from '../components/home/AgencyIntro';
 import Contact from '../pages/Contact'; // Reusing Contact/Footer section if appropriate or just the footer
 // Actually, design plan mentioned a custom footer CTA, but for now I'll use a direct CTA section in Home or reuse Contact component.
@@ -20,6 +21,7 @@ const Home = () => {
       <Hero />
       <ServicesTicker />
       <Mockit />
+      <WhyWorkWithUs />
       <AgencyIntro />
       <FooterCTA />
     </div>

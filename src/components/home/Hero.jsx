@@ -20,14 +20,14 @@ const Hero = () => {
                         initial={{ y: 50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-space-grotesk text-5xl font-bold uppercase leading-[0.9] tracking-tighter sm:text-7xl lg:text-[7vw] lg:leading-[0.85]"
+                        className="font-space-grotesk text-4xl font-bold uppercase leading-[0.9] tracking-tighter sm:text-6xl lg:text-[6vw] lg:leading-[0.85]"
                     >
                         <div className="overflow-hidden">
                             <motion.div
                                 variants={{ hidden: { y: "110%" }, visible: { y: 0 } }}
                                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                             >
-                                <span className="text-[10vw] sm:text-[11vw] lg:text-[9vw]">We Build</span>
+                                <span className="block text-[8vw] sm:text-[9vw] lg:text-[7vw]">Turning Vision</span>
                             </motion.div>
                         </div>
                         <div className="overflow-hidden">
@@ -36,7 +36,7 @@ const Hero = () => {
                                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                                 className="flex items-center gap-4 sm:gap-8 text-[#D3FD50]"
                             >
-                                <span className="text-[10vw] sm:text-[11vw] lg:text-[9vw]">The Future.</span>
+                                <span className="block text-[8vw] sm:text-[9vw] lg:text-[7vw]">Into Digital Reality.</span>
                             </motion.div>
                         </div>
                     </motion.h1>
@@ -45,9 +45,9 @@ const Hero = () => {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-                        className="mt-8 max-w-xl text-base font-light leading-relaxed text-white/70 sm:text-lg lg:text-xl"
+                        className="mt-8 max-w-2xl text-base font-light leading-relaxed text-white/70 sm:text-lg lg:text-xl"
                     >
-                        NEXTGEN is a digital product agency for ambitious brands. We craft experiences that merge strategy, design, and technology.
+                        To empower businesses of every scale with reliable, innovative, and scalable digital solutions delivered with speed, built on trust, and designed for growth.
                     </motion.p>
 
                     <motion.div
