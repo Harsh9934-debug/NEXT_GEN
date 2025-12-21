@@ -96,7 +96,6 @@ const Card = ({ children, className = "", noSpotlight = false }) => {
             onMouseLeave={handleMouseLeave}
             className={`relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900 via-zinc-900 to-black border border-white/10 p-8 transition-all duration-500 hover:border-white/20 group ${className}`}
         >
-            {/* Spotlight */}
             {!noSpotlight && (
                 <div
                     className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 z-10"
@@ -107,7 +106,6 @@ const Card = ({ children, className = "", noSpotlight = false }) => {
                 />
             )}
 
-            {/* Subtle Inner Glow on Hover */}
             <div className="absolute inset-0 bg-transparent transition-colors duration-500 group-hover:bg-[#D3FD50]/[0.01]" />
 
             <div className="relative z-20 h-full">{children}</div>
@@ -125,7 +123,6 @@ const WhyWorkWithUs = () => {
         <section className="bg-black px-6 py-24 sm:px-12 lg:px-20 relative overflow-hidden">
             <NoiseOverlay />
 
-            {/* Background Grid Pattern */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none fade-mask"></div>
 
             <div className="mx-auto max-w-7xl relative z-10">
@@ -144,7 +141,6 @@ const WhyWorkWithUs = () => {
                 </motion.div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-2">
-                    {/* 1. Multi-Disciplinary Expertise */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -172,13 +168,11 @@ const WhyWorkWithUs = () => {
                                         </div>
                                     ))}
                                 </div>
-                                {/* Abstract Decorative Gradient */}
                                 <div className="absolute top-0 right-0 h-[400px] w-[400px] bg-gradient-to-b from-[#D3FD50]/5 to-transparent blur-[80px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                             </Card>
                         </Link>
                     </motion.div>
 
-                    {/* 2. Custom-Built Solutions */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +195,6 @@ const WhyWorkWithUs = () => {
                         </Link>
                     </motion.div>
 
-                    {/* 3. End-to-End Partnership */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -218,7 +211,6 @@ const WhyWorkWithUs = () => {
                                     </p>
                                 </div>
                                 <div className="mt-8 relative h-12 w-full overflow-hidden rounded-lg bg-white/5 border border-white/5">
-                                    {/* Abstract Data Flow Animation */}
                                     <motion.div
                                         className="absolute top-1/2 left-0 h-[2px] w-12 bg-[#D3FD50] shadow-[0_0_10px_#D3FD50]"
                                         animate={{ x: [0, 300], opacity: [0, 1, 0] }}
@@ -233,7 +225,6 @@ const WhyWorkWithUs = () => {
                         </Link>
                     </motion.div>
 
-                    {/* 4. Proven Results (Marquee) */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -243,7 +234,6 @@ const WhyWorkWithUs = () => {
                     >
                         <Link to="/projects" className="block h-full">
                             <Card className="!p-0 h-full flex flex-row items-center justify-between overflow-hidden bg-black relative group" noSpotlight={true}>
-                                {/* Background Gradients */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none"></div>
 
                                 <div className="z-30 p-8 sm:p-14 max-w-lg absolute left-0 h-full flex flex-col justify-center relative">
@@ -259,7 +249,6 @@ const WhyWorkWithUs = () => {
                                     </div>
                                 </div>
 
-                                {/* Tilted Scrolling Marquee */}
                                 <div className="absolute inset-y-0 right-[-65%] w-[80%] overflow-hidden perspective-1000 flex items-center justify-center pointer-events-none">
                                     <motion.div
                                         className="flex flex-col gap-6 transform rotate-6 scale-110 opacity-80 group-hover:opacity-100 transition-opacity duration-700"
