@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import MagneticButton from '../common/MagneticButton';
 import { Link } from 'react-router-dom';
@@ -41,118 +41,90 @@ const FooterCTA = () => {
             onMouseMove={handleMouseMove}
             className="relative bg-black pt-32 pb-12 text-white overflow-hidden group"
         >
-
             {/* Spotlight Effect */}
             <motion.div
                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
                 style={{
                     background: useTransform(
                         [mouseX, mouseY],
-                        ([x, y]) => `radial-gradient(600px circle at ${x}px ${y}px, rgba(211, 253, 80, 0.04), transparent 40%)`
+                        ([x, y]) => `radial-gradient(600px circle at ${x}px ${y}px, rgba(255, 255, 255, 0.05), transparent 40%)`
                     )
                 }}
             />
 
-            {/* Infinite Marquee - Top Row */}
-            <div className="absolute top-[20%] left-0 w-full overflow-hidden whitespace-nowrap opacity-[0.03] select-none pointer-events-none">
-                <motion.div
-                    className="inline-block"
-                    animate={{ x: [0, -1000] }}
-                    transition={{ repeat: Infinity, ease: "linear", duration: 50 }}
-                >
-                    <span className="font-space-grotesk text-[15vw] font-bold uppercase leading-none tracking-tighter mr-8">
-                        NEXTGEN AGENCY • STRATEGY • DESIGN • TECHNOLOGY • NEXTGEN AGENCY • STRATEGY • DESIGN • TECHNOLOGY •
-                    </span>
-                    <span className="font-space-grotesk text-[15vw] font-bold uppercase leading-none tracking-tighter mr-8">
-                        NEXTGEN AGENCY • STRATEGY • DESIGN • TECHNOLOGY • NEXTGEN AGENCY • STRATEGY • DESIGN • TECHNOLOGY •
-                    </span>
-                </motion.div>
+            {/* Massive Background Text - Centered & Static-ish */}
+            <div className="absolute inset-0 flex justify-center items-center select-none pointer-events-none z-0 overflow-hidden">
+                <h1 className="font-space-grotesk text-[23vw] font-bold text-white/10 tracking-tighter leading-none whitespace-nowrap">
+                    <span className="text-[#D3FD50] opacity-20">N</span>EXT<span className="text-[#D3FD50] opacity-20">G</span>EN
+                </h1>
             </div>
 
-            {/* Infinite Marquee - Bottom Row (Opposite Direction) */}
-            <div className="absolute bottom-[20%] left-0 w-full overflow-hidden whitespace-nowrap opacity-[0.03] select-none pointer-events-none">
-                <motion.div
-                    className="inline-block"
-                    animate={{ x: [-1000, 0] }}
-                    transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
-                >
-                    <span className="font-space-grotesk text-[15vw] font-bold uppercase leading-none tracking-tighter mr-8">
-                        CREATING THE FUTURE • CRAFTING EXPERIENCES • CREATING THE FUTURE • CRAFTING EXPERIENCES •
-                    </span>
-                    <span className="font-space-grotesk text-[15vw] font-bold uppercase leading-none tracking-tighter mr-8">
-                        CREATING THE FUTURE • CRAFTING EXPERIENCES • CREATING THE FUTURE • CRAFTING EXPERIENCES •
-                    </span>
-                </motion.div>
-            </div>
 
             {/* Content Container */}
-            <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-12 lg:px-20">
+            <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-12 lg:px-20 h-full flex flex-col justify-between">
 
-                {/* Header / CTA */}
+                {/* Top Center: Call & Status */}
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={containerVariants}
-                    className="mb-32 flex flex-col items-center justify-center text-center"
+                    className="mt-20 mb-20 flex flex-col items-center justify-center text-center"
                 >
                     <motion.div variants={itemVariants}>
                         <MagneticButton>
                             <a href="mailto:nextgenservicesinformations@gmail.com" className="group relative block cursor-pointer">
-                                <div className="inline-flex items-center gap-4 rounded-full border border-white/20 bg-white/5 px-8 py-3 text-sm font-bold uppercase tracking-widest backdrop-blur-sm transition-colors hover:bg-white hover:text-black">
+                                <div className="inline-flex items-center gap-4 rounded-full bg-white/10 border border-white/10 px-8 py-4 text-sm font-bold uppercase tracking-widest text-white backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white hover:text-black">
                                     Book a 30-Min Call <ArrowUpRight size={16} />
                                 </div>
                             </a>
                         </MagneticButton>
                     </motion.div>
-                    <motion.div variants={itemVariants} className="mt-8 flex items-center gap-2 text-sm font-medium text-[#D3FD50]">
+                    <motion.div variants={itemVariants} className="mt-8 flex items-center gap-2 text-sm font-medium text-white/60">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D3FD50] opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D3FD50]"></span>
                         </span>
-                        We are online — let's connect!
+                        We are online — let's Connect!
                     </motion.div>
                 </motion.div>
 
-                {/* 4-Column Grid -> Converted to 3-Column */}
-                {/* Grid Layout: Brand (Left) | Links (Right) */}
+                {/* Main 3-Column Grid (User removed Newsletter) */}
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={containerVariants}
-                    className="grid grid-cols-1 gap-12 md:grid-cols-3 lg:grid-cols-12 mb-24"
+                    className="grid grid-cols-1 gap-12 md:grid-cols-3 mb-24"
                 >
-
-                    {/* Column 1: Brand (Spans 6 columns on large screens) */}
-                    <motion.div variants={itemVariants} className="flex flex-col gap-6 md:col-span-1 lg:col-span-6">
-                        <Link to="/" className="font-space-grotesk text-2xl font-bold uppercase tracking-tight">
+                    {/* 1. Brand */}
+                    <motion.div variants={itemVariants} className="md:text-left">
+                        <Link to="/" className="font-space-grotesk text-2xl font-bold uppercase tracking-tight block mb-4 text-white">
                             NEXTGEN
                         </Link>
-                        <p className="text-sm text-white/50 leading-relaxed max-w-sm">
-                            we build
+                        <p className="text-sm text-white/60 font-medium">
+                            We lead, Not follow
                         </p>
                     </motion.div>
 
-                    {/* Column 2: Company (Spans 3 columns) */}
-                    <motion.div variants={itemVariants} className="flex flex-col gap-6 md:col-span-1 lg:col-span-3">
-                        <h4 className="font-space-grotesk text-sm font-bold uppercase text-white">Company</h4>
-                        <ul className="flex flex-col gap-4 text-sm text-white/50">
-                            {['About Us', 'Our Work', 'Contact Us'].map((item) => (
+                    {/* 2. Company */}
+                    <motion.div variants={itemVariants} className="md:text-center">
+                        <h4 className="font-space-grotesk text-sm font-bold uppercase text-white mb-6">Company</h4>
+                        <ul className="flex flex-col gap-4 text-sm text-white/60">
+                            {['About Us', 'Pricing', 'Contact Us'].map((item) => (
                                 <li key={item}>
-                                    <Link to={`/ ${item.toLowerCase().replace(' ', '')} `} className="group relative inline-block overflow-hidden hover:text-[#D3FD50] transition-colors">
-                                        <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">{item}</span>
-                                        <span className="absolute left-0 top-0 inline-block translate-y-full text-[#D3FD50] transition-transform duration-300 group-hover:translate-y-0">{item}</span>
+                                    <Link to={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-white transition-colors">
+                                        {item}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </motion.div>
 
-                    {/* Column 3: Socials (Spans 3 columns) */}
-                    <motion.div variants={itemVariants} className="flex flex-col gap-6 md:col-span-1 lg:col-span-3">
-                        <h4 className="font-space-grotesk text-sm font-bold uppercase text-white">Socials</h4>
-                        <ul className="flex flex-col gap-4 text-sm text-white/50">
+                    {/* 3. Socials */}
+                    <motion.div variants={itemVariants} className="md:text-right">
+                        <h4 className="font-space-grotesk text-sm font-bold uppercase text-white mb-6">Socials</h4>
+                        <ul className="flex flex-col gap-4 text-sm text-white/60 w-full items-start md:items-end">
                             {[
                                 { name: 'Instagram', url: 'https://www.instagram.com/next.gen892?igsh=bml4ZGhnc28zNHRu' },
                                 { name: 'Twitter', url: 'https://x.com/Harshkumar10099' },
@@ -163,7 +135,7 @@ const FooterCTA = () => {
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group flex items-center gap-1 hover:text-[#D3FD50] transition-colors"
+                                        className="group flex items-center gap-1 hover:text-white transition-colors"
                                     >
                                         {social.name} <ArrowUpRight size={12} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                     </a>
@@ -179,9 +151,9 @@ const FooterCTA = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5, duration: 1 }}
-                    className="flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 sm:flex-row text-[10px] font-bold uppercase tracking-widest text-white/30"
+                    className="flex flex-col-reverse items-center justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row text-xs font-medium text-white/40"
                 >
-                    <span>© {new Date().getFullYear()} NEXTGEN Agency</span>
+                    <span>© {new Date().getFullYear()} NEXTGEN Technologies</span>
 
                 </motion.div>
             </div>
