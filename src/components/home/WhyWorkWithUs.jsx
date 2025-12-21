@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 // --- Decorative Components ---
 
@@ -151,28 +152,30 @@ const WhyWorkWithUs = () => {
                         transition={{ delay: 0.1 }}
                         className="md:col-span-2"
                     >
-                        <Card className="flex flex-col justify-between h-full bg-zinc-900/50 backdrop-blur-sm">
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <h3 className="mb-4 font-space-grotesk text-3xl font-bold text-white group-hover:text-[#D3FD50] transition-colors">Multi-Disciplinary Expertise</h3>
-                                    <p className="max-w-md text-lg text-white/70">
-                                        From design to development, marketing to strategy, we cover it all to build cohesive digital products.
-                                    </p>
-                                </div>
-                                <div className="hidden sm:flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:rotate-45 transition-transform duration-500">
-                                    <span className="text-white text-xl">↗</span>
-                                </div>
-                            </div>
-                            <div className="mt-12 flex flex-wrap gap-3">
-                                {['Design', 'Development', 'Strategy', 'Marketing', 'Data'].map((item, i) => (
-                                    <div key={i} className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-white transition-colors hover:border-[#D3FD50]/50 hover:text-[#D3FD50]">
-                                        {item}
+                        <Link to="/agency" className="block h-full">
+                            <Card className="flex flex-col justify-between h-full bg-zinc-900/50 backdrop-blur-sm">
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <h3 className="mb-4 font-space-grotesk text-3xl font-bold text-white group-hover:text-[#D3FD50] transition-colors">Multi-Disciplinary Expertise</h3>
+                                        <p className="max-w-md text-lg text-white/70">
+                                            From design to development, marketing to strategy, we cover it all to build cohesive digital products.
+                                        </p>
                                     </div>
-                                ))}
-                            </div>
-                            {/* Abstract Decorative Gradient */}
-                            <div className="absolute top-0 right-0 h-[400px] w-[400px] bg-gradient-to-b from-[#D3FD50]/5 to-transparent blur-[80px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        </Card>
+                                    <div className="hidden sm:flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 group-hover:rotate-45 transition-transform duration-500">
+                                        <span className="text-white text-xl">↗</span>
+                                    </div>
+                                </div>
+                                <div className="mt-12 flex flex-wrap gap-3">
+                                    {['Design', 'Development', 'Strategy', 'Marketing', 'Data'].map((item, i) => (
+                                        <div key={i} className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-white transition-colors hover:border-[#D3FD50]/50 hover:text-[#D3FD50]">
+                                            {item}
+                                        </div>
+                                    ))}
+                                </div>
+                                {/* Abstract Decorative Gradient */}
+                                <div className="absolute top-0 right-0 h-[400px] w-[400px] bg-gradient-to-b from-[#D3FD50]/5 to-transparent blur-[80px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                            </Card>
+                        </Link>
                     </motion.div>
 
                     {/* 2. Custom-Built Solutions */}
@@ -183,17 +186,19 @@ const WhyWorkWithUs = () => {
                         transition={{ delay: 0.2 }}
                         className="md:col-span-1"
                     >
-                        <Card className="flex flex-col justify-between h-full">
-                            <div>
-                                <h3 className="mb-4 font-space-grotesk text-3xl font-bold text-white group-hover:text-[#D3FD50] transition-colors">Custom-Built Solutions</h3>
-                                <p className="text-lg text-white/70">
-                                    No one-size-fits-all. Every pixel is tailored to your brand.
-                                </p>
-                            </div>
-                            <div className="mt-8 flex justify-end">
-                                <TypingEffect />
-                            </div>
-                        </Card>
+                        <Link to="/agency" className="block h-full">
+                            <Card className="flex flex-col justify-between h-full">
+                                <div>
+                                    <h3 className="mb-4 font-space-grotesk text-3xl font-bold text-white group-hover:text-[#D3FD50] transition-colors">Custom-Built Solutions</h3>
+                                    <p className="text-lg text-white/70">
+                                        No one-size-fits-all. Every pixel is tailored to your brand.
+                                    </p>
+                                </div>
+                                <div className="mt-8 flex justify-end">
+                                    <TypingEffect />
+                                </div>
+                            </Card>
+                        </Link>
                     </motion.div>
 
                     {/* 3. End-to-End Partnership */}
@@ -204,26 +209,28 @@ const WhyWorkWithUs = () => {
                         transition={{ delay: 0.3 }}
                         className="md:col-span-1"
                     >
-                        <Card className="flex flex-col justify-between h-full">
-                            <div>
-                                <h3 className="mb-4 font-space-grotesk text-3xl font-bold text-white group-hover:text-[#D3FD50] transition-colors">End-to-End Partnership</h3>
-                                <p className="text-lg text-white/70">
-                                    We don't just build; we collaborate, optimize, and grow with you.
-                                </p>
-                            </div>
-                            <div className="mt-8 relative h-12 w-full overflow-hidden rounded-lg bg-white/5 border border-white/5">
-                                {/* Abstract Data Flow Animation */}
-                                <motion.div
-                                    className="absolute top-1/2 left-0 h-[2px] w-12 bg-[#D3FD50] shadow-[0_0_10px_#D3FD50]"
-                                    animate={{ x: [0, 300], opacity: [0, 1, 0] }}
-                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                                />
-                                <motion.div
-                                    className="absolute top-1/2 left-0 h-[1px] w-full bg-white/10"
-                                />
-                                <div className="absolute top-1/2 right-4 -translate-y-1/2 h-2 w-2 rounded-full bg-[#D3FD50] animate-pulse"></div>
-                            </div>
-                        </Card>
+                        <Link to="/agency" className="block h-full">
+                            <Card className="flex flex-col justify-between h-full">
+                                <div>
+                                    <h3 className="mb-4 font-space-grotesk text-3xl font-bold text-white group-hover:text-[#D3FD50] transition-colors">End-to-End Partnership</h3>
+                                    <p className="text-lg text-white/70">
+                                        We don't just build; we collaborate, optimize, and grow with you.
+                                    </p>
+                                </div>
+                                <div className="mt-8 relative h-12 w-full overflow-hidden rounded-lg bg-white/5 border border-white/5">
+                                    {/* Abstract Data Flow Animation */}
+                                    <motion.div
+                                        className="absolute top-1/2 left-0 h-[2px] w-12 bg-[#D3FD50] shadow-[0_0_10px_#D3FD50]"
+                                        animate={{ x: [0, 300], opacity: [0, 1, 0] }}
+                                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                    />
+                                    <motion.div
+                                        className="absolute top-1/2 left-0 h-[1px] w-full bg-white/10"
+                                    />
+                                    <div className="absolute top-1/2 right-4 -translate-y-1/2 h-2 w-2 rounded-full bg-[#D3FD50] animate-pulse"></div>
+                                </div>
+                            </Card>
+                        </Link>
                     </motion.div>
 
                     {/* 4. Proven Results (Marquee) */}
@@ -234,39 +241,41 @@ const WhyWorkWithUs = () => {
                         transition={{ delay: 0.4 }}
                         className="md:col-span-2"
                     >
-                        <Card className="!p-0 h-full flex flex-row items-center justify-between overflow-hidden bg-black relative group" noSpotlight={true}>
-                            {/* Background Gradients */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none"></div>
+                        <Link to="/projects" className="block h-full">
+                            <Card className="!p-0 h-full flex flex-row items-center justify-between overflow-hidden bg-black relative group" noSpotlight={true}>
+                                {/* Background Gradients */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none"></div>
 
-                            <div className="z-30 p-8 sm:p-14 max-w-lg absolute left-0 h-full flex flex-col justify-center relative">
-                                <h3 className="mb-6 font-space-grotesk text-3xl sm:text-5xl font-bold text-white leading-tight">Proven Results</h3>
-                                <p className="text-lg text-white/70 mb-10 max-w-sm leading-relaxed">
-                                    Projects that don't just look good, but also deliver measurable growth.
-                                </p>
-                                <div className="flex items-center gap-4 text-[#D3FD50] text-sm font-bold uppercase tracking-widest cursor-pointer group/link w-max">
-                                    <div className="h-10 w-10 rounded-full border border-[#D3FD50]/30 flex items-center justify-center group-hover/link:bg-[#D3FD50] group-hover/link:text-black transition-all duration-300">
-                                        <span className="transition-transform group-hover/link:rotate-45 text-lg">↗</span>
-                                    </div>
-                                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">See Case Studies</span>
-                                </div>
-                            </div>
-
-                            {/* Tilted Scrolling Marquee */}
-                            <div className="absolute inset-y-0 right-[-65%] w-[80%] overflow-hidden perspective-1000 flex items-center justify-center pointer-events-none">
-                                <motion.div
-                                    className="flex flex-col gap-6 transform rotate-6 scale-110 opacity-80 group-hover:opacity-100 transition-opacity duration-700"
-                                    animate={{ y: ["0%", "-50%"] }}
-                                    transition={{ ease: "linear", duration: 20, repeat: Infinity }}
-                                >
-                                    {[...marqueeImages, ...marqueeImages].map((src, i) => (
-                                        <div key={i} className="w-[400px] h-[250px] relative rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-black">
-                                            <img src={src} alt="Project Result" className="w-full h-full object-cover" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60"></div>
+                                <div className="z-30 p-8 sm:p-14 max-w-lg absolute left-0 h-full flex flex-col justify-center relative">
+                                    <h3 className="mb-6 font-space-grotesk text-3xl sm:text-5xl font-bold text-white leading-tight">Proven Results</h3>
+                                    <p className="text-lg text-white/70 mb-10 max-w-sm leading-relaxed">
+                                        Projects that don't just look good, but also deliver measurable growth.
+                                    </p>
+                                    <div className="flex items-center gap-4 text-[#D3FD50] text-sm font-bold uppercase tracking-widest cursor-pointer group/link w-max">
+                                        <div className="h-10 w-10 rounded-full border border-[#D3FD50]/30 flex items-center justify-center group-hover/link:bg-[#D3FD50] group-hover/link:text-black transition-all duration-300">
+                                            <span className="transition-transform group-hover/link:rotate-45 text-lg">↗</span>
                                         </div>
-                                    ))}
-                                </motion.div>
-                            </div>
-                        </Card>
+                                        <span className="group-hover/link:translate-x-1 transition-transform duration-300">See Case Studies</span>
+                                    </div>
+                                </div>
+
+                                {/* Tilted Scrolling Marquee */}
+                                <div className="absolute inset-y-0 right-[-65%] w-[80%] overflow-hidden perspective-1000 flex items-center justify-center pointer-events-none">
+                                    <motion.div
+                                        className="flex flex-col gap-6 transform rotate-6 scale-110 opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                                        animate={{ y: ["0%", "-50%"] }}
+                                        transition={{ ease: "linear", duration: 20, repeat: Infinity }}
+                                    >
+                                        {[...marqueeImages, ...marqueeImages].map((src, i) => (
+                                            <div key={i} className="w-[400px] h-[250px] relative rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-black">
+                                                <img src={src} alt="Project Result" className="w-full h-full object-cover" />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60"></div>
+                                            </div>
+                                        ))}
+                                    </motion.div>
+                                </div>
+                            </Card>
+                        </Link>
                     </motion.div>
                 </div>
             </div>
