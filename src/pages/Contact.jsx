@@ -8,7 +8,6 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-black text-white pt-24">
       <section className="relative px-6 py-12 sm:px-12 lg:px-20 lg:py-24">
-        {/* Centered Contact Info */}
         <div className="flex flex-col items-center justify-center text-center mx-auto max-w-4xl">
           <motion.span
             initial={{ opacity: 0, y: 20 }}

@@ -2,8 +2,6 @@ import React, { useRef } from 'react';
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
 import FooterCTA from '../components/home/FooterCTA';
-
-// Services Section Component
 const ServicesSection = () => {
   const navigate = useNavigate();
 
@@ -82,7 +80,6 @@ const ServicesSection = () => {
   return (
     <div className="bg-black text-white px-6 sm:px-12 lg:px-20 py-24">
       <div className="mx-auto max-w-[1800px]">
-        {/* Header */}
         <div className="mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -106,7 +103,6 @@ const ServicesSection = () => {
           </motion.h1>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div
@@ -118,17 +114,12 @@ const ServicesSection = () => {
               className="group relative bg-[#0A0A0A] rounded-2xl p-8 border border-white/10 hover:border-[#D3FD50]/50 transition-colors duration-300 flex flex-col justify-between min-h-[420px]"
             >
               <div>
-                {/* Icon */}
                 <div className="mb-8 p-3 bg-white/5 rounded-lg inline-block text-[#D3FD50]">
                   {service.icon}
                 </div>
-
-                {/* Title */}
-                <h3 className="font-space-grotesk text-2xl font-bold mb-6 text-white group-hover:text-[#D3FD50] transition-colors">
+                  <h3 className="font-space-grotesk text-2xl font-bold mb-6 text-white group-hover:text-[#D3FD50] transition-colors">
                   {service.title}
                 </h3>
-
-                {/* Services List */}
                 <ul className="space-y-3 mb-8">
                   {service.services.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-center text-white/50 text-sm">
@@ -138,8 +129,6 @@ const ServicesSection = () => {
                   ))}
                 </ul>
               </div>
-
-              {/* Get Started Button */}
               <div className="pt-6 border-t border-white/10">
                 <button
                   onClick={handleGetStarted}
@@ -157,7 +146,6 @@ const ServicesSection = () => {
   );
 };
 
-// Digital Marketing Section Component
 const DigitalMarketingSection = () => {
   const navigate = useNavigate();
 
@@ -169,7 +157,6 @@ const DigitalMarketingSection = () => {
   return (
     <div className="bg-black text-white px-6 sm:px-12 lg:px-20 py-24 pb-40">
       <div className="mx-auto max-w-[1800px]">
-        {/* Header */}
         <div className="mb-20 grid lg:grid-cols-2 gap-12 items-end">
           <div>
             <div className="flex items-center gap-4 mb-8">
@@ -186,9 +173,7 @@ const DigitalMarketingSection = () => {
           </p>
         </div>
 
-        {/* Two Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Social Media Management Card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -196,7 +181,6 @@ const DigitalMarketingSection = () => {
             viewport={{ once: true }}
             className="group relative rounded-3xl p-10 overflow-hidden min-h-[400px] flex flex-col justify-end border border-white/10"
           >
-            {/* Background Image/Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
             <img
               src="/social.png"
@@ -222,7 +206,6 @@ const DigitalMarketingSection = () => {
             </div>
           </motion.div>
 
-          {/* Ad Campaigns Card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

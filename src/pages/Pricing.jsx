@@ -13,14 +13,14 @@ const Pricing = () => {
     const plans = [
         {
             name: "Starter",
-            price: "$2,999",
+            price: "₹ 5,999",
             description: "Perfect for startups and small businesses looking to establish a strong digital presence.",
             features: ["Custom Landing Page", "Mobile Responsive", "Basic SEO Setup", "1 Month Support"],
             highlight: false
         },
         {
             name: "Professional",
-            price: "$5,999",
+            price: "₹ 15,999",
             description: "A comprehensive solution for growing brands that need more functionalities.",
             features: ["5-Page Website", "CMS Integration", "Advanced SEO & Analytics", "3 Months Support", "Animation & Motion"],
             highlight: true

@@ -25,11 +25,8 @@ const Agence = () => {
 
   return (
     <div ref={containerRef} className='bg-black text-white min-h-screen font-sans'>
-      {/* HERO SECTION */}
       <section className='relative px-6 sm:px-12 lg:px-20 pt-32 pb-24 lg:pb-36 overflow-hidden'>
-        {/* Background Glow */}
         <div className="absolute right-0 top-0 h-[600px] w-[600px] translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D3FD50] opacity-[0.03] blur-[120px] pointer-events-none" />
-
         <div className='relative mx-auto max-w-[1800px]'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -103,11 +100,8 @@ const Agence = () => {
         </div>
       </section>
 
-
-      {/* COLLABORATION MODEL SECTION */}
       <section className='relative px-6 sm:px-12 lg:px-20 py-20 mb-20'>
         <div className='mx-auto max-w-7xl rounded-[32px] border border-white/10 bg-[#0A0A0A] p-8 md:p-16 overflow-hidden relative group'>
-          {/* Subtle gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
           <div className='text-center max-w-3xl mx-auto'>
@@ -147,9 +141,6 @@ const Agence = () => {
           </div>
         </div>
       </section>
-
-
-      {/* Page 3 of Agence - Services etc */}
       <Suspense fallback={<div className="min-h-screen bg-black" />}>
         <Page3ofAgence />
       </Suspense>
