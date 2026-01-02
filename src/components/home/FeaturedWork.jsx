@@ -36,7 +36,6 @@ const FeaturedWork = () => {
     ];
 
     const handleMouseMove = (e) => {
-        // Calculate mouse position relative to the list container for better control
         if (listRef.current) {
             const rect = listRef.current.getBoundingClientRect();
             setMousePosition({
@@ -83,8 +82,6 @@ const FeaturedWork = () => {
                     </Link>
                 ))}
                 <div className='border-t border-white/20 w-full'></div>
-
-                {/* Floating Reveal Image - Desktop Only */}
                 <AnimatePresence>
                     {hoveredProject !== null && (
                         <motion.div
@@ -92,8 +89,8 @@ const FeaturedWork = () => {
                             animate={{
                                 opacity: 1,
                                 scale: 1,
-                                x: mousePosition.x - 200, // Center the image (width 400/2)
-                                y: mousePosition.y - 150  // Center the image (height 300/2)
+                                x: mousePosition.x - 200, 
+                                y: mousePosition.y - 150 
                             }}
                             exit={{ opacity: 0, scale: 0.8 }}
                             transition={{ type: "spring", stiffness: 150, damping: 20, mass: 0.8 }}
