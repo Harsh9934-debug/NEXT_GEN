@@ -6,9 +6,7 @@ import MagneticButton from '../common/MagneticButton';
 const AgencyIntro = () => {
     return (
         <section className="relative bg-black px-6 py-32 text-center sm:px-12 lg:px-20 overflow-hidden">
-            {/* Ambient Background Glow */}
             <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-[0.03] blur-[100px] pointer-events-none" />
-
             <div className="relative z-10 mx-auto max-w-4xl">
                 <span className="mb-8 block font-inter text-xs font-bold uppercase tracking-[0.3em] text-[#D3FD50]">
                     The Agency
