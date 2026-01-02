@@ -8,12 +8,10 @@ import { ArrowUpRight } from 'lucide-react';
 const Hero = () => {
     return (
         <section className="relative h-screen w-full overflow-hidden bg-black text-white">
-            {/* Background Video */}
             <div className="absolute inset-0 z-0">
                 <Video />
             </div>
 
-            {/* Hero Content */}
             <div className="relative z-10 flex h-full flex-col justify-center px-6 sm:px-12 lg:px-20">
                 <div className="max-w-5xl">
                     <motion.h1

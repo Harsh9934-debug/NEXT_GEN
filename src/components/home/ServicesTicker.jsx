@@ -11,7 +11,7 @@ import {
 import { wrap } from '@motionone/utils';
 
 const ServicesTicker = () => {
-    const baseVelocity = -1; // Percent speed
+    const baseVelocity = -1; 
     const scrollY = useScroll().scrollY;
     const scrollVelocity = useVelocity(scrollY);
     const smoothVelocity = useSpring(scrollVelocity, {
@@ -26,10 +26,7 @@ const ServicesTicker = () => {
     const directionFactor = useRef(1);
 
     useAnimationFrame((t, delta) => {
-        // Calculate movement in percentage
         let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-
-        // Apply direction changes based on scroll velocity polarity
         if (velocityFactor.get() < 0) {
             directionFactor.current = -1;
         } else if (velocityFactor.get() > 0) {
@@ -40,10 +37,6 @@ const ServicesTicker = () => {
 
         baseX.set(baseX.get() + moveBy);
     });
-
-    // Wrap resets the value when it exceeds the range, creating the loop
-    // 8 copies -> 100% / 8 = 12.5% per copy.
-    // We wrap between -12.5% and 0% to loop seamlessy after one full set passes.
     const x = useTransform(baseX, (v) => `${wrap(-12.5, 0, v)}%`);
 
     return (
@@ -53,7 +46,6 @@ const ServicesTicker = () => {
                     className="flex whitespace-nowrap"
                     style={{ x }}
                 >
-                    {/* Render 8 copies to ensure buffer for wrapping and screen coverage */}
                     {Array.from({ length: 8 }).map((_, i) => (
                         <div key={i} className="flex items-center">
                             {["STRATEGY", "DESIGN", "DEVELOPMENT", "MARKETING"].map((service, index) => (

@@ -41,7 +41,7 @@ const FooterCTA = () => {
             onMouseMove={handleMouseMove}
             className="relative bg-black pt-32 pb-12 text-white overflow-hidden group"
         >
-            {/* Spotlight Effect */}
+
             <motion.div
                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
                 style={{
@@ -52,7 +52,6 @@ const FooterCTA = () => {
                 }}
             />
 
-            {/* Massive Background Text - Centered & Static-ish */}
             <div className="absolute inset-0 flex justify-center items-center select-none pointer-events-none z-0 overflow-hidden">
                 <h1 className="font-space-grotesk text-[23vw] font-bold text-white/10 tracking-tighter leading-none whitespace-nowrap">
                     <span className="text-[#D3FD50] opacity-20">N</span>EXT<span className="text-[#D3FD50] opacity-20">G</span>EN
@@ -60,10 +59,8 @@ const FooterCTA = () => {
             </div>
 
 
-            {/* Content Container */}
-            <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-12 lg:px-20 h-full flex flex-col justify-between">
 
-                {/* Top Center: Call & Status */}
+            <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-12 lg:px-20 h-full flex flex-col justify-between">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -89,7 +86,7 @@ const FooterCTA = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* Main 3-Column Grid (User removed Newsletter) */}
+
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -97,7 +94,7 @@ const FooterCTA = () => {
                     variants={containerVariants}
                     className="grid grid-cols-1 gap-12 md:grid-cols-3 mb-24"
                 >
-                    {/* 1. Brand */}
+
                     <motion.div variants={itemVariants} className="md:text-left">
                         <Link to="/" className="font-space-grotesk text-2xl font-bold uppercase tracking-tight block mb-4 text-white">
                             NEXTGEN
@@ -107,7 +104,7 @@ const FooterCTA = () => {
                         </p>
                     </motion.div>
 
-                    {/* 2. Company */}
+
                     <motion.div variants={itemVariants} className="md:text-center">
                         <h4 className="font-space-grotesk text-sm font-bold uppercase text-white mb-6">Company</h4>
                         <ul className="flex flex-col gap-4 text-sm text-white/60">
@@ -121,7 +118,7 @@ const FooterCTA = () => {
                         </ul>
                     </motion.div>
 
-                    {/* 3. Socials */}
+
                     <motion.div variants={itemVariants} className="md:text-right">
                         <h4 className="font-space-grotesk text-sm font-bold uppercase text-white mb-6">Socials</h4>
                         <ul className="flex flex-col gap-4 text-sm text-white/60 w-full items-start md:items-end">
@@ -145,7 +142,7 @@ const FooterCTA = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* Bottom Bar */}
+
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}

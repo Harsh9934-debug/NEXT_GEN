@@ -1,5 +1,3 @@
-// this contain the logo for the website and the hamburger menu for the navigation bar
-
 import React, { useContext, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import { NavbarColorContext, NavbarContext } from '../../context/NavContext'

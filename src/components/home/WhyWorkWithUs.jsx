@@ -2,8 +2,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-// --- Decorative Components ---
-
 const NoiseOverlay = () => (
     <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -64,7 +62,7 @@ const TypingEffect = () => {
     );
 };
 
-// --- Main Card Component ---
+
 
 const Card = ({ children, className = "", noSpotlight = false }) => {
     const divRef = useRef(null);

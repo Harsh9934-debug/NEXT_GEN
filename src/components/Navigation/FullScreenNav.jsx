@@ -8,14 +8,12 @@ const FullScreenNav = () => {
     const fullScreenRef = useRef(null)
     const [navOpen, setNavOpen] = useContext(NavbarContext)
 
-    // Lock body scroll and handle Escape key when nav is open, also focus first link
+
     const scrollYRef = useRef(0)
     useEffect(() => {
         if (!navOpen) return
-        // Capture scroll position
         scrollYRef.current = window.scrollY || window.pageYOffset || 0
         const body = document.body
-        // Lock scroll using position: fixed technique
         body.style.position = 'fixed'
         body.style.top = `-${scrollYRef.current}px`
         body.style.left = '0'
@@ -30,7 +28,7 @@ const FullScreenNav = () => {
         }
         document.addEventListener('keydown', handleKeyDown)
 
-        // Focus first interactive link inside the nav
+
         const firstLink = fullNavLinksRef.current?.querySelector('a[href]')
         if (firstLink) {
             setTimeout(() => firstLink.focus(), 0)
@@ -38,7 +36,6 @@ const FullScreenNav = () => {
 
         return () => {
             document.removeEventListener('keydown', handleKeyDown)
-            // Restore scroll
             const y = scrollYRef.current
             const b = document.body
             b.style.position = ''
@@ -53,16 +50,13 @@ const FullScreenNav = () => {
 
     function gsapAnimation() {
         const tl = gsap.timeline()
-        // ensure visible immediately
         tl.set('.fullscreennav', { display: 'block' })
-        // quick stair reveal
         tl.to('.stairing', {
             duration: 0.18,
             height: '100%',
             stagger: 0.06,
             ease: 'power2.out'
         })
-        // bring links in with small overlap
         tl.set('.link', { opacity: 0, rotateX: 90 })
         tl.to('.link', {
             duration: 0.14,
@@ -71,13 +65,11 @@ const FullScreenNav = () => {
             stagger: 0.06,
             ease: 'power2.out'
         }, '-=0.08')
-        // navlink (logo/close) fade
         tl.to('.navlink', { duration: 0.1, opacity: 1 }, '-=0.06')
     }
 
     function gsapAnimationReverse() {
         const tl = gsap.timeline()
-        // hide links quickly
         tl.to('.link', {
             duration: 0.12,
             opacity: 0,
@@ -85,14 +77,12 @@ const FullScreenNav = () => {
             stagger: 0.04,
             ease: 'power2.in'
         })
-        // collapse stairs
         tl.to('.stairing', {
             duration: 0.14,
             height: 0,
             stagger: 0.05,
             ease: 'power2.in'
         }, '-=0.06')
-        // hide navlink then remove from flow
         tl.to('.navlink', { duration: 0.08, opacity: 0 }, '-=0.06')
         tl.set('.fullscreennav', { display: 'none' })
     }
@@ -111,12 +101,11 @@ const FullScreenNav = () => {
             aria-modal='true'
             aria-hidden={!navOpen}
         >
-                    {/* Base backdrop to prevent background peeking while open */}
-                    <div
-                        className='fixed inset-0 bg-black'
-                        aria-hidden='true'
-                        onClick={() => setNavOpen(false)}
-                    />
+            <div
+                className='fixed inset-0 bg-black'
+                aria-hidden='true'
+                onClick={() => setNavOpen(false)}
+            />
             <div className='h-screen w-full fixed'>
                 <div className='h-full w-full flex'>
                     <div className='stairing h-full w-1/5 bg-black'></div>
